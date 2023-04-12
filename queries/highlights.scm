@@ -1,0 +1,139 @@
+; these probably shouldn't be modules
+(functions "functions" @module)
+(data "data" @module)
+(transformed_data "transformed data" @module)
+(parameters "parameters" @module)
+(transformed_parameters "transformed parameters" @module)
+(model "model" @module)
+(generated_quantities "generated quantities" @module)
+
+(comment) @comment
+(string_literal) @string
+
+[
+    "||"
+    "&&"
+    "=="
+    "!="
+    "<"
+    "<="
+    ">"
+    ">="
+    "+"
+    "-"
+    "*"
+    "/"
+    "%"
+    "\\"
+    ".^"
+    "%/%"
+    ".*"
+    "./"
+    "!"
+    "-"
+    "+"
+    "^"
+    "'"
+    "~"
+    "="
+    (assignment_op)
+] @operator
+
+[
+    "("
+    ")"
+    "["
+    "]"
+    "{"
+    "}"
+    "<"
+    ">"
+] @punctuation.bracket
+
+[
+    ","
+    "|"
+    ";"
+] @punctuation.delimiter
+
+(function_declarator
+name: (identifier) @function
+)
+
+(function_expression
+name: (identifier) @function.call
+)
+
+(distr_expression
+name: (identifier) @function.call
+)
+
+(print_statement
+"print" @function.call)
+
+(reject_statement
+"reject" @function.call)
+
+[
+    "data"
+    "int"
+    "real"
+    "complex"
+    "array"
+    "vector"
+    "simplex"
+    "unit_vector"
+    "ordered"
+    "positive_ordered"
+    "row_vector"
+    "matrix"
+    "complex_vector"
+    "complex_matrix"
+    "complex_row_vector"
+    "corr_matrix"
+    "cov_matrix"
+    "cholesky_factor_cov"
+    "cholesky_factor_corr"
+    "void"
+]@type
+
+[
+    (integer_literal)
+    (real_literal)
+    (imag_literal)
+] @number
+
+[
+    "break"
+    "continue"
+    "while"
+    "for"
+    "if"
+    "else"
+    "return"
+] @keyword.control
+
+[
+    "lower"
+    "upper"
+    "offset"
+    "multiplier"
+] @property
+
+(preproc_include
+    directive: "#include" @keyword
+    file: (preproc_file) @string.special
+)
+
+
+(profile_statement "profile" @keyword)
+
+
+(for_statement
+loopvar: (identifier) @variable.parameter
+)
+(parameter_declaration
+parameter: (identifier) @variable.parameter
+)
+
+(identifier) @variable

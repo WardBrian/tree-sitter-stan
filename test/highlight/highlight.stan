@@ -64,4 +64,6 @@ model {
   print("hello world");
   //^ function.call
   //    ^ string
+  e ~ normal(0,1);
+  //  ^ function.call
 }

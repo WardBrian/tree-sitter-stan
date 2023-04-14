@@ -3577,7 +3577,18 @@
   {
     "type": "sampling_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -3600,10 +3611,6 @@
         },
         {
           "type": "function_expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         },
         {

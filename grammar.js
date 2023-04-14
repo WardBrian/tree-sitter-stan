@@ -706,7 +706,7 @@ module.exports = grammar({
         sampling_statement: $ => seq(
             $._expression,
             '~',
-            $.identifier,
+            field("name",$.identifier),
             '(',
             commaSep($._expression),
             ')',

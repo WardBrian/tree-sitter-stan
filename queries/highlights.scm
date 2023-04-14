@@ -68,6 +68,10 @@ name: (identifier) @function.call
 name: (identifier) @function.call
 )
 
+(sampling_statement
+name: (identifier) @function.call
+)
+
 (print_statement
 "print" @function.call)
 

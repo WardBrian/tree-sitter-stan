@@ -21,4 +21,4 @@ loopvar: (identifier) @local.definition
 (top_var_decl_no_assign name: (identifier) @local.definition)
 
 ; references
-(identifier) @local.reference
+(variable_expression (identifier) @local.reference)

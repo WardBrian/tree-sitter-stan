@@ -514,13 +514,15 @@ module.exports = grammar({
             $.integer_literal,
             $.real_literal,
             $.imag_literal,
-            $.identifier,
+            $.variable_expression,
             $.array_expression,
             $.vector_expression,
             $.function_expression,
             $.distr_expression,
             $.parenthized_expression,
         ),
+
+        variable_expression: $ => $.identifier,
 
         conditional_expression: $ => prec.right(PREC.CONDITIONAL, seq(
             $._expression,
@@ -684,7 +686,7 @@ module.exports = grammar({
         )),
 
         lhs: $ => seq(
-            $.identifier,
+            $.variable_expression,
             optional(
                 repeat(seq('[', commaSep1(optional($.index)), ']'))),
         ),

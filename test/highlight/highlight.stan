@@ -23,6 +23,7 @@ functions {
 
 data {
    vector[4] x;
+     //      ^ variable
 }
 parameters {
   real e;
@@ -38,6 +39,7 @@ transformed parameters {
   //         ^ variable
 
   vector[num_elements(x)] result = x * 5.0;
+  //      ^ function.call
 
   profile("shadow-1") {
     mu += profile_map;
@@ -53,6 +55,7 @@ transformed parameters {
     {
       int i;
       print(i);
+      //<- function.call
       //    ^ variable
     }
   }

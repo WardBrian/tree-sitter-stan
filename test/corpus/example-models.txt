@@ -29,7 +29,8 @@ model {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type))
       (identifier)))
@@ -43,15 +44,18 @@ model {
       (distr_expression
         (identifier)
         (distr_argument_list
-          (identifier)
+          (variable_expression
+            (identifier))
           (integer_literal)
           (integer_literal))))
     (target_statement
       (distr_expression
         (identifier)
         (distr_argument_list
-          (identifier)
-          (identifier)
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
           (integer_literal))))))
 
 ================================================================================
@@ -84,7 +88,8 @@ model {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type))
       (identifier)))
@@ -95,14 +100,17 @@ model {
       (identifier)))
   (model
     (sampling_statement
-      (identifier)
+      (variable_expression
+        (identifier))
       (identifier)
       (integer_literal)
       (integer_literal))
     (sampling_statement
+      (variable_expression
+        (identifier))
       (identifier)
-      (identifier)
-      (identifier)
+      (variable_expression
+        (identifier))
       (integer_literal))))
 
 ================================================================================
@@ -130,7 +138,8 @@ model {
   (model
     (sampling_statement
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal)))
       (identifier)
@@ -138,7 +147,8 @@ model {
       (integer_literal))
     (sampling_statement
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal)))
       (identifier)
@@ -166,9 +176,11 @@ data {real y_mean;} parameters {real y;} model {y ~ normal(y_mean,1);}
       (identifier)))
   (model
     (sampling_statement
+      (variable_expression
+        (identifier))
       (identifier)
-      (identifier)
-      (identifier)
+      (variable_expression
+        (identifier))
       (integer_literal))))
 
 ================================================================================
@@ -208,14 +220,16 @@ model {
     (comment)
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type))
       (identifier))
     (comment)
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type
           (type_constraint
@@ -237,50 +251,63 @@ model {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type))
       (identifier)))
   (transformed_parameters
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type))
       (identifier))
     (for_statement
       (identifier)
       (integer_literal)
-      (identifier)
+      (variable_expression
+        (identifier))
       (assignment_statement
         (lhs
-          (identifier)
+          (variable_expression
+            (identifier))
           (index
-            (identifier)))
+            (variable_expression
+              (identifier))))
         (assignment_op)
         (infix_op_expression
-          (identifier)
+          (variable_expression
+            (identifier))
           (infix_op_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (indexed_expression
-              (identifier)
+              (variable_expression
+                (identifier))
               (index
-                (identifier))))))))
+                (variable_expression
+                  (identifier)))))))))
   (model
     (target_statement
       (distr_expression
         (identifier)
         (distr_argument_list
-          (identifier)
+          (variable_expression
+            (identifier))
           (integer_literal)
           (integer_literal))))
     (target_statement
       (distr_expression
         (identifier)
         (distr_argument_list
-          (identifier)
-          (identifier)
-          (identifier))))))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))))
 
 ================================================================================
 Indexing
@@ -309,7 +336,8 @@ generated quantities {
       (identifier))
     (assignment_statement
       (lhs
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal))
         (index
@@ -320,7 +348,8 @@ generated quantities {
       (indexed_expression
         (indexed_expression
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal)))
           (index
@@ -329,7 +358,8 @@ generated quantities {
           (integer_literal))))
     (assignment_statement
       (lhs
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal))
         (index
@@ -338,7 +368,8 @@ generated quantities {
           (integer_literal)))
       (assignment_op)
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal))
         (index
@@ -347,7 +378,8 @@ generated quantities {
           (integer_literal))))
     (assignment_statement
       (lhs
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal))
         (index)
@@ -355,7 +387,8 @@ generated quantities {
           (integer_literal)))
       (assignment_op)
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal))
         (index)
@@ -363,7 +396,8 @@ generated quantities {
           (integer_literal))))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type
           (type_constraint

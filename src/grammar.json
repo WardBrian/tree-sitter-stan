@@ -1973,7 +1973,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "variable_expression"
         },
         {
           "type": "SYMBOL",
@@ -1996,6 +1996,10 @@
           "name": "parenthized_expression"
         }
       ]
+    },
+    "variable_expression": {
+      "type": "SYMBOL",
+      "name": "identifier"
     },
     "conditional_expression": {
       "type": "PREC_RIGHT",
@@ -3582,7 +3586,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "variable_expression"
         },
         {
           "type": "CHOICE",

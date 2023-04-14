@@ -37,7 +37,8 @@ functions {
             (identifier))))
       (block_statement
         (print_statement
-          (identifier))
+          (variable_expression
+            (identifier)))
         (comment)
         (var_decl
           (sized_basic_type)
@@ -65,7 +66,8 @@ functions {
           (integer_literal)
           (block_statement
             (return_statement
-              (identifier))
+              (variable_expression
+                (identifier)))
             (comment)))))
     (function_definition
       (return_type
@@ -85,8 +87,10 @@ functions {
       (block_statement
         (return_statement
           (infix_op_expression
-            (identifier)
-            (identifier)))))))
+            (variable_expression
+              (identifier))
+            (variable_expression
+              (identifier))))))))
 
 ================================================================================
 data block
@@ -130,7 +134,8 @@ transformed data {
       (identifier))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (real_literal
         (integer_literal)))))
@@ -172,7 +177,8 @@ transformed parameters {
       (identifier))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (real_literal
         (integer_literal)))))
@@ -195,7 +201,8 @@ model {
       (identifier))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (real_literal
         (integer_literal)))))
@@ -219,7 +226,8 @@ generated quantities {
       (identifier))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (real_literal
         (integer_literal)))))

@@ -856,18 +856,21 @@ generated quantities {
       (block_statement
         (if_statement
           (infix_op_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (integer_literal))
           (return_statement
             (integer_literal)))
         (return_statement
           (infix_op_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (function_expression
               (identifier)
               (argument_list
                 (infix_op_expression
-                  (identifier)
+                  (variable_expression
+                    (identifier))
                   (integer_literal))))))))
     (function_definition
       (return_type
@@ -909,37 +912,44 @@ generated quantities {
           (identifier))
         (assignment_statement
           (lhs
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal)))
           (assignment_op)
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal))))
         (assignment_statement
           (lhs
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal)))
           (assignment_op)
           (infix_op_expression
             (prefix_op_expression
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
                   (integer_literal))))
             (infix_op_expression
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
                   (integer_literal)))
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
                   (integer_literal))))))
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -1068,8 +1078,10 @@ generated quantities {
           (function_expression
             (identifier)
             (argument_list
-              (identifier)
-              (identifier))))))
+              (variable_expression
+                (identifier))
+              (variable_expression
+                (identifier)))))))
     (function_definition
       (return_type)
       (function_declarator
@@ -1084,11 +1096,13 @@ generated quantities {
           (distr_expression
             (identifier)
             (distr_argument_list
-              (identifier)
+              (variable_expression
+                (identifier))
               (integer_literal)
               (integer_literal))))
         (sampling_statement
-          (identifier)
+          (variable_expression
+            (identifier))
           (identifier)
           (prefix_op_expression
             (integer_literal))
@@ -1132,7 +1146,8 @@ generated quantities {
               (identifier))
             (assignment_statement
               (lhs
-                (identifier))
+                (variable_expression
+                  (identifier)))
               (assignment_op)
               (integer_literal))
             (break_statement)))
@@ -1177,41 +1192,49 @@ generated quantities {
               (identifier))
             (for_statement
               (identifier)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (assignment_statement
                   (lhs
-                    (identifier))
+                    (variable_expression
+                      (identifier)))
                   (assignment_op)
                   (integer_literal))
                 (break_statement)))
             (for_statement
               (identifier)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (assignment_statement
                   (lhs
-                    (identifier))
+                    (variable_expression
+                      (identifier)))
                   (assignment_op)
                   (integer_literal))
                 (continue_statement)))
             (for_statement
               (identifier)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (for_statement
                   (identifier)
-                  (identifier)
+                  (variable_expression
+                    (identifier))
                   (block_statement
                     (assignment_statement
                       (lhs
-                        (identifier))
+                        (variable_expression
+                          (identifier)))
                       (assignment_op)
                       (integer_literal))
                     (break_statement)))
                 (assignment_statement
                   (lhs
-                    (identifier))
+                    (variable_expression
+                      (identifier)))
                   (assignment_op)
                   (integer_literal))))))
         (comment)
@@ -1228,21 +1251,25 @@ generated quantities {
               (identifier))
             (for_statement
               (identifier)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (assignment_statement
                   (lhs
-                    (identifier))
+                    (variable_expression
+                      (identifier)))
                   (assignment_op)
                   (integer_literal))
                 (break_statement)))
             (for_statement
               (identifier)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (assignment_statement
                   (lhs
-                    (identifier))
+                    (variable_expression
+                      (identifier)))
                   (assignment_op)
                   (real_literal
                     (integer_literal)
@@ -1261,21 +1288,25 @@ generated quantities {
               (identifier))
             (for_statement
               (identifier)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (assignment_statement
                   (lhs
-                    (identifier))
+                    (variable_expression
+                      (identifier)))
                   (assignment_op)
                   (integer_literal))
                 (break_statement)))
             (for_statement
               (identifier)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (assignment_statement
                   (lhs
-                    (identifier))
+                    (variable_expression
+                      (identifier)))
                   (assignment_op)
                   (real_literal
                     (integer_literal)
@@ -1294,21 +1325,25 @@ generated quantities {
               (identifier))
             (for_statement
               (identifier)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (assignment_statement
                   (lhs
-                    (identifier))
+                    (variable_expression
+                      (identifier)))
                   (assignment_op)
                   (integer_literal))
                 (break_statement)))
             (for_statement
               (identifier)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (assignment_statement
                   (lhs
-                    (identifier))
+                    (variable_expression
+                      (identifier)))
                   (assignment_op)
                   (real_literal
                     (integer_literal)
@@ -1323,7 +1358,8 @@ generated quantities {
               (identifier))
             (assignment_statement
               (lhs
-                (identifier))
+                (variable_expression
+                  (identifier)))
               (assignment_op)
               (integer_literal))
             (block_statement
@@ -1332,7 +1368,8 @@ generated quantities {
                 (identifier))
               (assignment_statement
                 (lhs
-                  (identifier))
+                  (variable_expression
+                    (identifier)))
                 (assignment_op)
                 (integer_literal))
               (break_statement))))
@@ -1360,12 +1397,15 @@ generated quantities {
           (identifier))
         (for_statement
           (identifier)
-          (identifier)
+          (variable_expression
+            (identifier))
           (assignment_statement
             (lhs
-              (identifier))
+              (variable_expression
+                (identifier)))
             (assignment_op)
-            (identifier)))
+            (variable_expression
+              (identifier))))
         (return_statement
           (integer_literal))))
     (function_definition
@@ -1389,8 +1429,10 @@ generated quantities {
           (function_expression
             (identifier)
             (argument_list
-              (identifier)
-              (identifier))))))
+              (variable_expression
+                (identifier))
+              (variable_expression
+                (identifier)))))))
     (function_definition
       (return_type
         (unsized_type
@@ -1405,7 +1447,8 @@ generated quantities {
       (block_statement
         (return_statement
           (infix_op_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (function_expression
               (identifier)
               (argument_list))))))
@@ -1423,11 +1466,13 @@ generated quantities {
         (reject_statement
           (string_literal)
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal)))
           (string_literal)
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -1460,17 +1505,21 @@ generated quantities {
           (identifier))
         (assignment_statement
           (lhs
-            (identifier))
+            (variable_expression
+              (identifier)))
           (assignment_op)
           (function_expression
             (identifier)
             (argument_list
               (infix_op_expression
-                (identifier)
-                (identifier)))))
+                (variable_expression
+                  (identifier))
+                (variable_expression
+                  (identifier))))))
         (assignment_statement
           (lhs
-            (identifier))
+            (variable_expression
+              (identifier)))
           (assignment_op)
           (infix_op_expression
             (parenthized_expression
@@ -1478,44 +1527,60 @@ generated quantities {
                 (function_expression
                   (identifier)
                   (argument_list
-                    (identifier)))
+                    (variable_expression
+                      (identifier))))
                 (function_expression
                   (identifier)
                   (argument_list
-                    (identifier)))))
+                    (variable_expression
+                      (identifier))))))
             (integer_literal)))
         (if_statement
           (infix_op_expression
             (parenthized_expression
               (infix_op_expression
-                (identifier)
-                (identifier)))
-            (identifier))
+                (variable_expression
+                  (identifier))
+                (variable_expression
+                  (identifier))))
+            (variable_expression
+              (identifier)))
           (reject_statement
             (string_literal)
-            (identifier)
+            (variable_expression
+              (identifier))
             (string_literal)
-            (identifier)
+            (variable_expression
+              (identifier))
             (string_literal)
-            (identifier)))
+            (variable_expression
+              (identifier))))
         (if_statement
           (infix_op_expression
             (parenthized_expression
               (infix_op_expression
-                (identifier)
-                (identifier)))
-            (identifier))
+                (variable_expression
+                  (identifier))
+                (variable_expression
+                  (identifier))))
+            (variable_expression
+              (identifier)))
           (reject_statement
             (string_literal)
-            (identifier)
+            (variable_expression
+              (identifier))
             (string_literal)
-            (identifier)
+            (variable_expression
+              (identifier))
             (string_literal)
-            (identifier)))
+            (variable_expression
+              (identifier))))
         (return_statement
           (infix_op_expression
-            (identifier)
-            (identifier)))))
+            (variable_expression
+              (identifier))
+            (variable_expression
+              (identifier))))))
     (function_definition
       (return_type
         (unsized_type
@@ -1577,7 +1642,8 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -1611,7 +1677,8 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -1633,43 +1700,52 @@ generated quantities {
             (function_expression
               (identifier)
               (argument_list
-                (identifier)))
+                (variable_expression
+                  (identifier))))
             (function_expression
               (identifier)
               (argument_list
-                (identifier))))
+                (variable_expression
+                  (identifier)))))
           (identifier))
         (assignment_statement
           (lhs
-            (identifier))
+            (variable_expression
+              (identifier)))
           (assignment_op)
-          (identifier))
+          (variable_expression
+            (identifier)))
         (assignment_statement
           (lhs
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal)))
           (assignment_op)
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal))))
         (assignment_statement
           (lhs
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (colon_expression
                 (integer_literal)
                 (integer_literal))))
           (assignment_op)
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (colon_expression
                 (integer_literal)
                 (integer_literal)))))
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type)
       (function_declarator
@@ -1799,7 +1875,8 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -1866,7 +1943,8 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -1933,7 +2011,8 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -1999,74 +2078,8 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
-    (function_definition
-      (return_type
-        (unsized_type
-          (unsized_dims)
-          (basic_type)))
-      (function_declarator
-        (identifier)
-        (parameter_list
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))))
-      (block_statement
-        (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -2133,73 +2146,8 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
-    (function_definition
-      (return_type
-        (unsized_type
-          (basic_type)))
-      (function_declarator
-        (identifier)
-        (parameter_list
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))))
-      (block_statement
-        (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -2266,7 +2214,75 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
+    (function_definition
+      (return_type
+        (unsized_type
+          (basic_type)))
+      (function_declarator
+        (identifier)
+        (parameter_list
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))))
+      (block_statement
+        (return_statement
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -2333,73 +2349,8 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
-    (function_definition
-      (return_type
-        (unsized_type
-          (basic_type)))
-      (function_declarator
-        (identifier)
-        (parameter_list
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))
-          (parameter_declaration
-            (unsized_type
-              (unsized_dims)
-              (basic_type))
-            (identifier))))
-      (block_statement
-        (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -2466,7 +2417,75 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
+    (function_definition
+      (return_type
+        (unsized_type
+          (basic_type)))
+      (function_declarator
+        (identifier)
+        (parameter_list
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))))
+      (block_statement
+        (return_statement
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -2533,7 +2552,76 @@ generated quantities {
             (identifier))))
       (block_statement
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
+    (function_definition
+      (return_type
+        (unsized_type
+          (unsized_dims)
+          (basic_type)))
+      (function_declarator
+        (identifier)
+        (parameter_list
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))
+          (parameter_declaration
+            (unsized_type
+              (unsized_dims)
+              (basic_type))
+            (identifier))))
+      (block_statement
+        (return_statement
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type)
       (function_declarator
@@ -2562,7 +2650,8 @@ generated quantities {
           (identifier))
         (assignment_statement
           (lhs
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal))
             (index
@@ -2572,7 +2661,8 @@ generated quantities {
             (index
               (integer_literal)))
           (assignment_op)
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -2654,12 +2744,14 @@ generated quantities {
             (integer_literal))
           (identifier)
           (infix_op_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (function_expression
               (identifier)
               (argument_list))))
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -2677,7 +2769,8 @@ generated quantities {
             (integer_literal))
           (identifier)
           (infix_op_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (postfix_op_expression
               (vector_expression
                 (integer_literal)
@@ -2692,7 +2785,8 @@ generated quantities {
                 (integer_literal)))))
         (return_statement
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (array_expression
                 (integer_literal)
@@ -2732,36 +2826,43 @@ generated quantities {
           (identifier))
         (assignment_statement
           (lhs
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal)))
           (assignment_op)
           (infix_op_expression
             (indexed_expression
-              (identifier)
+              (variable_expression
+                (identifier))
               (index
                 (integer_literal)))
             (indexed_expression
-              (identifier)
+              (variable_expression
+                (identifier))
               (index
                 (integer_literal)))))
         (assignment_statement
           (lhs
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal)))
           (assignment_op)
           (infix_op_expression
             (indexed_expression
-              (identifier)
+              (variable_expression
+                (identifier))
               (index
                 (integer_literal)))
             (indexed_expression
-              (identifier)
+              (variable_expression
+                (identifier))
               (index
                 (integer_literal)))))
         (return_statement
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (function_definition
       (return_type
         (unsized_type
@@ -2794,7 +2895,8 @@ generated quantities {
           (identifier))
         (assignment_statement
           (lhs
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (integer_literal)))
           (assignment_op)
@@ -2802,7 +2904,8 @@ generated quantities {
             (integer_literal)
             (integer_literal)))
         (return_statement
-          (identifier)))))
+          (variable_expression
+            (identifier))))))
   (data
     (top_var_decl_no_assign
       (top_var_type
@@ -2822,26 +2925,34 @@ generated quantities {
           (range_lower_upper
             (integer_literal)
             (infix_op_expression
-              (identifier)
+              (variable_expression
+                (identifier))
+              (variable_expression
+                (identifier))))))
+      (identifier))
+    (top_var_decl_no_assign
+      (arr_dims
+        (variable_expression
+          (identifier)))
+      (top_var_type
+        (int_type
+          (range_upper
+            (variable_expression
               (identifier)))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (int_type
           (range_upper
-            (identifier))))
-      (identifier))
-    (top_var_decl_no_assign
-      (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
-      (top_var_type
-        (int_type
-          (range_upper
-            (identifier))))
+            (variable_expression
+              (identifier)))))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
@@ -2858,59 +2969,77 @@ generated quantities {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
         (row_vector_type
-          (identifier)))
-      (identifier))
-    (top_var_decl_no_assign
-      (arr_dims
-        (identifier))
-      (top_var_type
-        (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (row_vector_type
+          (variable_expression
+            (identifier))))
+      (identifier))
+    (top_var_decl_no_assign
+      (arr_dims
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
           (identifier)))
+      (top_var_type
+        (row_vector_type
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
@@ -2928,23 +3057,30 @@ generated quantities {
     (top_var_decl_no_assign
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
@@ -2959,7 +3095,8 @@ generated quantities {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (cholesky_factor_cov_type
           (integer_literal)))
@@ -2970,20 +3107,23 @@ generated quantities {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (int_type))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal))
       (top_var_type
         (int_type))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal)
         (integer_literal))
       (top_var_type
@@ -2995,20 +3135,23 @@ generated quantities {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal))
       (top_var_type
         (real_type))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal)
         (integer_literal))
       (top_var_type
@@ -3017,93 +3160,118 @@ generated quantities {
     (top_var_decl_no_assign
       (top_var_type
         (matrix_type
-          (identifier)
-          (identifier)))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (matrix_type
-          (identifier)
-          (identifier)))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal))
       (top_var_type
         (matrix_type
-          (identifier)
-          (identifier)))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal)
         (integer_literal))
       (top_var_type
         (matrix_type
-          (identifier)
-          (identifier)))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal)
         (integer_literal))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
         (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal))
       (top_var_type
         (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal)
         (integer_literal))
       (top_var_type
         (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier)))
   (transformed_data
     (top_var_decl
@@ -3112,13 +3280,15 @@ generated quantities {
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (int_type))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (int_type))
       (identifier)
@@ -3126,19 +3296,23 @@ generated quantities {
         (identifier)
         (argument_list
           (integer_literal)
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (top_var_decl
       (top_var_type
         (int_type))
       (identifier)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (top_var_decl
       (top_var_type
         (real_type))
       (identifier)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (top_var_decl
       (top_var_type
         (real_type))
@@ -3146,7 +3320,8 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (top_var_decl
       (arr_dims
         (integer_literal)
@@ -3163,23 +3338,30 @@ generated quantities {
     (top_var_decl
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (top_var_type
@@ -3231,14 +3413,16 @@ generated quantities {
       (identifier))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
         (integer_literal)
         (integer_literal)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
         (integer_literal)
@@ -3265,15 +3449,20 @@ generated quantities {
                   (block_statement
                     (assignment_statement
                       (lhs
-                        (identifier)
-                        (index
+                        (variable_expression
                           (identifier))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier)))
+                          (variable_expression
+                            (identifier)))
+                        (index
+                          (variable_expression
+                            (identifier))))
                       (assignment_op)
                       (real_literal
                         (integer_literal)
@@ -3281,64 +3470,81 @@ generated quantities {
     (for_statement
       (identifier)
       (integer_literal)
-      (identifier)
+      (variable_expression
+        (identifier))
       (block_statement
         (assignment_statement
           (lhs
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
-              (identifier)))
+              (variable_expression
+                (identifier))))
           (assignment_op)
           (infix_op_expression
             (real_literal
               (integer_literal)
               (integer_literal))
-            (identifier)))
+            (variable_expression
+              (identifier))))
         (for_statement
           (identifier)
           (integer_literal)
-          (identifier)
+          (variable_expression
+            (identifier))
           (block_statement
             (assignment_statement
               (lhs
-                (identifier)
-                (index
+                (variable_expression
                   (identifier))
                 (index
-                  (identifier)))
+                  (variable_expression
+                    (identifier)))
+                (index
+                  (variable_expression
+                    (identifier))))
               (assignment_op)
               (infix_op_expression
                 (real_literal
                   (integer_literal)
                   (integer_literal))
-                (identifier)))
+                (variable_expression
+                  (identifier))))
             (for_statement
               (identifier)
               (integer_literal)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (for_statement
                   (identifier)
                   (integer_literal)
-                  (identifier)
+                  (variable_expression
+                    (identifier))
                   (block_statement
                     (assignment_statement
                       (lhs
-                        (identifier)
-                        (index
+                        (variable_expression
                           (identifier))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier)))
+                          (variable_expression
+                            (identifier)))
+                        (index
+                          (variable_expression
+                            (identifier))))
                       (assignment_op)
                       (infix_op_expression
                         (real_literal
                           (integer_literal)
                           (integer_literal))
-                        (identifier)))))))))))
+                        (variable_expression
+                          (identifier))))))))))))
     (for_statement
       (identifier)
       (integer_literal)
@@ -3355,21 +3561,28 @@ generated quantities {
                 (integer_literal))
               (identifier)
               (indexed_expression
-                (identifier)
-                (index
+                (variable_expression
                   (identifier))
                 (index
-                  (identifier))))
+                  (variable_expression
+                    (identifier)))
+                (index
+                  (variable_expression
+                    (identifier)))))
             (print_statement
               (string_literal)
-              (identifier)
+              (variable_expression
+                (identifier))
               (string_literal)
-              (identifier)
+              (variable_expression
+                (identifier))
               (string_literal)
-              (identifier))))))
+              (variable_expression
+                (identifier)))))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
@@ -3381,10 +3594,12 @@ generated quantities {
               (function_expression
                 (identifier)
                 (argument_list
-                  (identifier))))))))
+                  (variable_expression
+                    (identifier)))))))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
@@ -3396,7 +3611,8 @@ generated quantities {
               (function_expression
                 (identifier)
                 (argument_list
-                  (identifier))))))))
+                  (variable_expression
+                    (identifier)))))))))
     (block_statement
       (var_decl
         (sized_basic_type)
@@ -3407,11 +3623,13 @@ generated quantities {
         (identifier))
       (for_statement
         (identifier)
-        (identifier)
+        (variable_expression
+          (identifier))
         (block_statement
           (assignment_statement
             (lhs
-              (identifier))
+              (variable_expression
+                (identifier)))
             (assignment_op)
             (integer_literal))))
       (var_decl
@@ -3427,7 +3645,8 @@ generated quantities {
       (for_statement
         (identifier)
         (indexed_expression
-          (identifier)
+          (variable_expression
+            (identifier))
           (index
             (colon_expression
               (integer_literal)
@@ -3435,48 +3654,60 @@ generated quantities {
         (block_statement
           (assignment_statement
             (lhs
-              (identifier))
+              (variable_expression
+                (identifier)))
             (assignment_op)
-            (identifier)))))
+            (variable_expression
+              (identifier))))))
     (comment)
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
-        (index
-          (integer_literal))
-        (index)))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal))
         (index)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
+        (index
+          (integer_literal))
+        (index)))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (indexed_expression
+        (variable_expression
+          (identifier))
         (index
           (integer_literal))
         (index
           (colon_expression
             (integer_literal)
-            (identifier)))))
+            (variable_expression
+              (identifier))))))
     (top_var_decl
       (arr_dims
         (integer_literal)
@@ -3486,7 +3717,8 @@ generated quantities {
       (identifier))
     (assignment_statement
       (lhs
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal))
         (index
@@ -3512,20 +3744,23 @@ generated quantities {
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal))
       (top_var_type
         (real_type))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal)
         (integer_literal))
       (top_var_type
@@ -3534,836 +3769,1177 @@ generated quantities {
     (top_var_decl
       (top_var_type
         (matrix_type
-          (identifier)
-          (identifier)))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (matrix_type
-          (identifier)
-          (identifier)))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal))
       (top_var_type
         (matrix_type
-          (identifier)
-          (identifier)))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal)
         (integer_literal))
       (top_var_type
         (matrix_type
-          (identifier)
-          (identifier)))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal)
         (integer_literal))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (top_var_type
         (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal))
       (top_var_type
         (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
+        (variable_expression
+          (identifier))
         (integer_literal)
         (integer_literal))
       (top_var_type
         (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
-          (identifier))))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
-          (identifier))))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (infix_op_expression
+        (variable_expression
+          (identifier))
+        (variable_expression
           (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
-      (assignment_op)
-      (infix_op_expression
-        (identifier)
-        (identifier)))
-    (assignment_statement
-      (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
-          (identifier))))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (infix_op_expression
+        (variable_expression
+          (identifier))
+        (variable_expression
           (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
-      (assignment_op)
-      (infix_op_expression
-        (identifier)
-        (identifier)))
-    (assignment_statement
-      (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
-          (identifier))))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (infix_op_expression
+        (variable_expression
+          (identifier))
+        (variable_expression
           (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier)))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (infix_op_expression
-        (identifier)
-        (identifier))))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))))
   (parameters
     (top_var_decl_no_assign
       (top_var_type
@@ -4374,14 +4950,16 @@ generated quantities {
         (real_type
           (type_constraint
             (range_lower
-              (identifier)))))
+              (variable_expression
+                (identifier))))))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
         (real_type
           (type_constraint
             (range_upper
-              (identifier)))))
+              (variable_expression
+                (identifier))))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
@@ -4413,7 +4991,8 @@ generated quantities {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type
           (type_constraint
@@ -4422,9 +5001,12 @@ generated quantities {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type
           (type_constraint
@@ -4437,44 +5019,58 @@ generated quantities {
           (type_constraint
             (range_lower
               (integer_literal)))
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
         (row_vector_type
-          (identifier)))
-      (identifier))
-    (top_var_decl_no_assign
-      (arr_dims
-        (identifier))
-      (top_var_type
-        (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (row_vector_type
+          (variable_expression
+            (identifier))))
+      (identifier))
+    (top_var_decl_no_assign
+      (arr_dims
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
           (identifier)))
+      (top_var_type
+        (row_vector_type
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
@@ -4498,23 +5094,30 @@ generated quantities {
     (top_var_decl_no_assign
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl_no_assign
       (top_var_type
@@ -4529,7 +5132,8 @@ generated quantities {
       (identifier))
     (top_var_decl_no_assign
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (cholesky_factor_cov_type
           (integer_literal)))
@@ -4547,7 +5151,8 @@ generated quantities {
   (transformed_parameters
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type
           (type_constraint
@@ -4556,9 +5161,12 @@ generated quantities {
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type
           (type_constraint
@@ -4571,44 +5179,58 @@ generated quantities {
           (type_constraint
             (range_upper
               (integer_literal)))
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (top_var_type
         (row_vector_type
-          (identifier)))
-      (identifier))
-    (top_var_decl
-      (arr_dims
-        (identifier))
-      (top_var_type
-        (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (row_vector_type
+          (variable_expression
+            (identifier))))
+      (identifier))
+    (top_var_decl
+      (arr_dims
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
           (identifier)))
+      (top_var_type
+        (row_vector_type
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (top_var_type
@@ -4632,23 +5254,30 @@ generated quantities {
     (top_var_decl
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (top_var_type
@@ -4663,7 +5292,8 @@ generated quantities {
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (cholesky_factor_cov_type
           (integer_literal)))
@@ -4679,74 +5309,102 @@ generated quantities {
       (identifier))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
-          (identifier))))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
-          (identifier))))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
     (for_statement
       (identifier)
       (integer_literal)
@@ -4769,15 +5427,20 @@ generated quantities {
                   (block_statement
                     (assignment_statement
                       (lhs
-                        (identifier)
-                        (index
+                        (variable_expression
                           (identifier))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier)))
+                          (variable_expression
+                            (identifier)))
+                        (index
+                          (variable_expression
+                            (identifier))))
                       (assignment_op)
                       (real_literal
                         (integer_literal)
@@ -4785,12 +5448,15 @@ generated quantities {
     (for_statement
       (identifier)
       (integer_literal)
-      (identifier)
+      (variable_expression
+        (identifier))
       (assignment_statement
         (lhs
-          (identifier)
+          (variable_expression
+            (identifier))
           (index
-            (identifier)))
+            (variable_expression
+              (identifier))))
         (assignment_op)
         (infix_op_expression
           (prefix_op_expression
@@ -4798,154 +5464,210 @@ generated quantities {
               (integer_literal)
               (integer_literal)))
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
-              (identifier))))))
+              (variable_expression
+                (identifier)))))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (postfix_op_expression
         (indexed_expression
-          (identifier)
+          (variable_expression
+            (identifier))
           (index
             (integer_literal)))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (identifier))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (function_expression
-        (identifier)
-        (argument_list
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier))))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (function_expression
-        (identifier)
-        (argument_list
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (real_literal
-            (integer_literal)
-            (integer_literal))
-          (real_literal
-            (integer_literal)
-            (integer_literal))
-          (integer_literal))))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (function_expression
-        (identifier)
-        (argument_list
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (real_literal
-            (integer_literal)
-            (integer_literal))
-          (real_literal
-            (integer_literal)
-            (integer_literal))
-          (integer_literal))))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (function_expression
-        (identifier)
-        (argument_list
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier))))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (function_expression
-        (identifier)
-        (argument_list
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (real_literal
-            (integer_literal)
-            (integer_literal))
-          (real_literal
-            (integer_literal)
-            (integer_literal))
-          (integer_literal))))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (function_expression
-        (identifier)
-        (argument_list
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier))))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (function_expression
-        (identifier)
-        (argument_list
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (real_literal
-            (integer_literal)
-            (integer_literal))
-          (real_literal
-            (integer_literal)
-            (integer_literal))
-          (integer_literal))))
-    (assignment_statement
-      (lhs
-        (identifier))
-      (assignment_op)
-      (infix_op_expression
-        (identifier)
+      (variable_expression
         (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (variable_expression
+        (identifier)))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (function_expression
+        (identifier)
+        (argument_list
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (function_expression
+        (identifier)
+        (argument_list
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (real_literal
+            (integer_literal)
+            (integer_literal))
+          (real_literal
+            (integer_literal)
+            (integer_literal))
+          (integer_literal))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (function_expression
+        (identifier)
+        (argument_list
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (real_literal
+            (integer_literal)
+            (integer_literal))
+          (real_literal
+            (integer_literal)
+            (integer_literal))
+          (integer_literal))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (function_expression
+        (identifier)
+        (argument_list
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (function_expression
+        (identifier)
+        (argument_list
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (real_literal
+            (integer_literal)
+            (integer_literal))
+          (real_literal
+            (integer_literal)
+            (integer_literal))
+          (integer_literal))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (function_expression
+        (identifier)
+        (argument_list
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier)))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (function_expression
+        (identifier)
+        (argument_list
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (real_literal
+            (integer_literal)
+            (integer_literal))
+          (real_literal
+            (integer_literal)
+            (integer_literal))
+          (integer_literal))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (infix_op_expression
-        (identifier)
-        (identifier))))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))))
+    (assignment_statement
+      (lhs
+        (variable_expression
+          (identifier)))
+      (assignment_op)
+      (infix_op_expression
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))))
   (model
     (var_decl
       (sized_basic_type
@@ -4963,31 +5685,37 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (var_decl
       (sized_basic_type)
       (identifier)
       (function_expression
         (identifier)
         (argument_list
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (sampling_statement
-      (identifier)
+      (variable_expression
+        (identifier))
       (identifier)
       (integer_literal)
       (integer_literal))
     (sampling_statement
-      (identifier)
-      (identifier)
-      (integer_literal)
-      (integer_literal))
-    (sampling_statement
-      (identifier)
+      (variable_expression
+        (identifier))
       (identifier)
       (integer_literal)
       (integer_literal))
     (sampling_statement
+      (variable_expression
+        (identifier))
       (identifier)
+      (integer_literal)
+      (integer_literal))
+    (sampling_statement
+      (variable_expression
+        (identifier))
       (identifier)
       (integer_literal)
       (integer_literal))
@@ -4995,23 +5723,27 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier)
       (integer_literal)
       (integer_literal))
     (for_statement
       (identifier)
       (integer_literal)
-      (identifier)
+      (variable_expression
+        (identifier))
       (block_statement
         (sampling_statement
           (function_expression
             (identifier)
             (argument_list
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
-                  (identifier)))))
+                  (variable_expression
+                    (identifier))))))
           (identifier)
           (integer_literal)
           (integer_literal))
@@ -5020,9 +5752,11 @@ generated quantities {
             (identifier)
             (argument_list
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
-                  (identifier)))))
+                  (variable_expression
+                    (identifier))))))
           (identifier)
           (integer_literal)
           (integer_literal))
@@ -5031,106 +5765,142 @@ generated quantities {
             (identifier)
             (argument_list
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
-                  (identifier)))))
+                  (variable_expression
+                    (identifier))))))
           (identifier)
           (integer_literal)
           (integer_literal))
         (for_statement
           (identifier)
           (integer_literal)
-          (identifier)
+          (variable_expression
+            (identifier))
           (block_statement
             (for_statement
               (identifier)
               (integer_literal)
-              (identifier)
+              (variable_expression
+                (identifier))
               (block_statement
                 (sampling_statement
                   (function_expression
                     (identifier)
                     (argument_list
                       (indexed_expression
-                        (identifier)
-                        (index
+                        (variable_expression
                           (identifier))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier)))))
+                          (variable_expression
+                            (identifier)))
+                        (index
+                          (variable_expression
+                            (identifier))))))
                   (identifier)
                   (indexed_expression
-                    (identifier)
-                    (index
+                    (variable_expression
                       (identifier))
                     (index
-                      (identifier))
+                      (variable_expression
+                        (identifier)))
                     (index
-                      (identifier)))
+                      (variable_expression
+                        (identifier)))
+                    (index
+                      (variable_expression
+                        (identifier))))
                   (integer_literal))
                 (sampling_statement
                   (function_expression
                     (identifier)
                     (argument_list
                       (indexed_expression
-                        (identifier)
-                        (index
+                        (variable_expression
                           (identifier))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier)))))
+                          (variable_expression
+                            (identifier)))
+                        (index
+                          (variable_expression
+                            (identifier))))))
                   (identifier)
                   (indexed_expression
-                    (identifier)
-                    (index
+                    (variable_expression
                       (identifier))
                     (index
-                      (identifier))
+                      (variable_expression
+                        (identifier)))
                     (index
-                      (identifier)))
+                      (variable_expression
+                        (identifier)))
+                    (index
+                      (variable_expression
+                        (identifier))))
                   (integer_literal))
                 (sampling_statement
                   (function_expression
                     (identifier)
                     (argument_list
                       (indexed_expression
-                        (identifier)
-                        (index
+                        (variable_expression
                           (identifier))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier)))))
+                          (variable_expression
+                            (identifier)))
+                        (index
+                          (variable_expression
+                            (identifier))))))
                   (identifier)
                   (indexed_expression
-                    (identifier)
-                    (index
+                    (variable_expression
                       (identifier))
                     (index
-                      (identifier))
+                      (variable_expression
+                        (identifier)))
                     (index
-                      (identifier)))
+                      (variable_expression
+                        (identifier)))
+                    (index
+                      (variable_expression
+                        (identifier))))
                   (integer_literal))
                 (sampling_statement
                   (indexed_expression
-                    (identifier)
-                    (index
+                    (variable_expression
                       (identifier))
                     (index
-                      (identifier))
+                      (variable_expression
+                        (identifier)))
                     (index
-                      (identifier)))
+                      (variable_expression
+                        (identifier)))
+                    (index
+                      (variable_expression
+                        (identifier))))
                   (identifier)
                   (indexed_expression
-                    (identifier)
-                    (index
+                    (variable_expression
                       (identifier))
                     (index
-                      (identifier))
+                      (variable_expression
+                        (identifier)))
                     (index
-                      (identifier)))
+                      (variable_expression
+                        (identifier)))
+                    (index
+                      (variable_expression
+                        (identifier))))
                   (integer_literal))))))))
     (for_statement
       (identifier)
@@ -5147,27 +5917,33 @@ generated quantities {
                 (identifier)
                 (argument_list
                   (indexed_expression
-                    (identifier)
-                    (index
+                    (variable_expression
                       (identifier))
                     (index
-                      (identifier)))))
+                      (variable_expression
+                        (identifier)))
+                    (index
+                      (variable_expression
+                        (identifier))))))
               (identifier)
               (integer_literal)
               (integer_literal))))))
     (for_statement
       (identifier)
       (integer_literal)
-      (identifier)
+      (variable_expression
+        (identifier))
       (block_statement
         (sampling_statement
           (function_expression
             (identifier)
             (argument_list
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
-                  (identifier)))))
+                  (variable_expression
+                    (identifier))))))
           (identifier)
           (integer_literal)
           (integer_literal))))
@@ -5175,15 +5951,18 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier)
-      (identifier)
+      (variable_expression
+        (identifier))
       (integer_literal))
     (sampling_statement
       (function_expression
         (identifier)
         (argument_list
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier)
       (integer_literal)
       (integer_literal))
@@ -5191,7 +5970,8 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier)
       (integer_literal)
       (integer_literal))
@@ -5199,7 +5979,8 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier)
       (integer_literal)
       (integer_literal))
@@ -5207,7 +5988,8 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier)
       (integer_literal)
       (integer_literal))
@@ -5215,11 +5997,16 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)))))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))
+          (variable_expression
+            (identifier))))))
   (generated_quantities
     (top_var_decl
       (top_var_type
@@ -5228,7 +6015,8 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (top_var_decl
       (top_var_type
         (real_type))
@@ -5236,10 +6024,12 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type
           (type_constraint
@@ -5248,9 +6038,12 @@ generated quantities {
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (real_type
           (type_constraint
@@ -5263,44 +6056,58 @@ generated quantities {
           (type_constraint
             (range_upper
               (integer_literal)))
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (top_var_type
         (row_vector_type
-          (identifier)))
-      (identifier))
-    (top_var_decl
-      (arr_dims
-        (identifier))
-      (top_var_type
-        (row_vector_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (row_vector_type
+          (variable_expression
+            (identifier))))
+      (identifier))
+    (top_var_decl
+      (arr_dims
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
           (identifier)))
+      (top_var_type
+        (row_vector_type
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
@@ -5318,23 +6125,30 @@ generated quantities {
     (top_var_decl
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier)
-        (identifier)
-        (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (simplex_type
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (identifier))
     (top_var_decl
       (top_var_type
@@ -5349,7 +6163,8 @@ generated quantities {
       (identifier))
     (top_var_decl
       (arr_dims
-        (identifier))
+        (variable_expression
+          (identifier)))
       (top_var_type
         (cholesky_factor_cov_type
           (integer_literal)))
@@ -5436,80 +6251,107 @@ generated quantities {
       (identifier))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index)
         (index
           (integer_literal))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (integer_literal))
         (index
           (colon_expression
             (integer_literal)
-            (identifier)))))
+            (variable_expression
+              (identifier))))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
-      (identifier))
+      (variable_expression
+        (identifier)))
     (for_statement
       (identifier)
       (integer_literal)
@@ -5532,15 +6374,20 @@ generated quantities {
                   (block_statement
                     (assignment_statement
                       (lhs
-                        (identifier)
-                        (index
+                        (variable_expression
                           (identifier))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier))
+                          (variable_expression
+                            (identifier)))
                         (index
-                          (identifier)))
+                          (variable_expression
+                            (identifier)))
+                        (index
+                          (variable_expression
+                            (identifier))))
                       (assignment_op)
                       (real_literal
                         (integer_literal)
@@ -5548,12 +6395,15 @@ generated quantities {
     (for_statement
       (identifier)
       (integer_literal)
-      (identifier)
+      (variable_expression
+        (identifier))
       (assignment_statement
         (lhs
-          (identifier)
+          (variable_expression
+            (identifier))
           (index
-            (identifier)))
+            (variable_expression
+              (identifier))))
         (assignment_op)
         (infix_op_expression
           (prefix_op_expression
@@ -5561,9 +6411,11 @@ generated quantities {
               (integer_literal)
               (integer_literal)))
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
-              (identifier))))))
+              (variable_expression
+                (identifier)))))))
     (comment)
     (for_statement
       (identifier)
@@ -5579,13 +6431,17 @@ generated quantities {
           (integer_literal)
           (assignment_statement
             (lhs
-              (identifier)
-              (index
+              (variable_expression
                 (identifier))
               (index
-                (identifier))
+                (variable_expression
+                  (identifier)))
               (index
-                (identifier)))
+                (variable_expression
+                  (identifier)))
+              (index
+                (variable_expression
+                  (identifier))))
             (assignment_op)
             (function_expression
               (identifier)
@@ -5599,53 +6455,70 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (for_statement
         (identifier)
         (integer_literal)
         (function_expression
           (identifier)
           (argument_list
-            (identifier)))
+            (variable_expression
+              (identifier))))
         (assignment_statement
           (lhs
-            (identifier)
-            (index
+            (variable_expression
               (identifier))
             (index
-              (identifier)))
+              (variable_expression
+                (identifier)))
+            (index
+              (variable_expression
+                (identifier))))
           (assignment_op)
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
-                  (identifier))))
+                  (variable_expression
+                    (identifier)))))
             (index
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
-                  (identifier))))))))
+                  (variable_expression
+                    (identifier)))))))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
-        (index
+        (variable_expression
           (identifier))
         (index
-          (identifier))))
+          (variable_expression
+            (identifier)))
+        (index
+          (variable_expression
+            (identifier)))))
     (if_statement
       (infix_op_expression
         (indexed_expression
           (indexed_expression
-            (identifier)
-            (index
+            (variable_expression
               (identifier))
             (index
-              (identifier)))
+              (variable_expression
+                (identifier)))
+            (index
+              (variable_expression
+                (identifier))))
           (index
             (integer_literal))
           (index
@@ -5653,7 +6526,8 @@ generated quantities {
           (index
             (integer_literal)))
         (indexed_expression
-          (identifier)
+          (variable_expression
+            (identifier))
           (index
             (integer_literal))
           (index
@@ -5673,42 +6547,55 @@ generated quantities {
         (function_expression
           (identifier)
           (argument_list
-            (identifier)))
+            (variable_expression
+              (identifier))))
         (assignment_statement
           (lhs
-            (identifier)
-            (index
+            (variable_expression
               (identifier))
             (index
-              (identifier)))
+              (variable_expression
+                (identifier)))
+            (index
+              (variable_expression
+                (identifier))))
           (assignment_op)
           (indexed_expression
-            (identifier)
-            (index
+            (variable_expression
               (identifier))
             (index
+              (variable_expression
+                (identifier)))
+            (index
               (indexed_expression
-                (identifier)
+                (variable_expression
+                  (identifier))
                 (index
-                  (identifier))))))))
+                  (variable_expression
+                    (identifier)))))))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index)
         (index
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (comment)
     (if_statement
       (infix_op_expression
         (indexed_expression
           (indexed_expression
-            (identifier)
+            (variable_expression
+              (identifier))
             (index)
             (index
-              (identifier)))
+              (variable_expression
+                (identifier))))
           (index
             (integer_literal))
           (index
@@ -5716,7 +6603,8 @@ generated quantities {
           (index
             (integer_literal)))
         (indexed_expression
-          (identifier)
+          (variable_expression
+            (identifier))
           (index
             (integer_literal))
           (index
@@ -5732,7 +6620,8 @@ generated quantities {
       (function_expression
         (identifier)
         (argument_list
-          (identifier)))
+          (variable_expression
+            (identifier))))
       (for_statement
         (identifier)
         (integer_literal)
@@ -5743,52 +6632,70 @@ generated quantities {
           (function_expression
             (identifier)
             (argument_list
-              (identifier)))
+              (variable_expression
+                (identifier))))
           (assignment_statement
             (lhs
-              (identifier)
-              (index
+              (variable_expression
                 (identifier))
               (index
-                (identifier))
+                (variable_expression
+                  (identifier)))
               (index
-                (identifier)))
+                (variable_expression
+                  (identifier)))
+              (index
+                (variable_expression
+                  (identifier))))
             (assignment_op)
             (indexed_expression
-              (identifier)
-              (index
-                (indexed_expression
-                  (identifier)
-                  (index
-                    (identifier))))
-              (index
+              (variable_expression
                 (identifier))
               (index
                 (indexed_expression
-                  (identifier)
+                  (variable_expression
+                    (identifier))
                   (index
-                    (identifier)))))))))
+                    (variable_expression
+                      (identifier)))))
+              (index
+                (variable_expression
+                  (identifier)))
+              (index
+                (indexed_expression
+                  (variable_expression
+                    (identifier))
+                  (index
+                    (variable_expression
+                      (identifier))))))))))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
-        (index
+        (variable_expression
           (identifier))
+        (index
+          (variable_expression
+            (identifier)))
         (index)
         (index
-          (identifier))))
+          (variable_expression
+            (identifier)))))
     (if_statement
       (infix_op_expression
         (indexed_expression
           (indexed_expression
-            (identifier)
-            (index
+            (variable_expression
               (identifier))
+            (index
+              (variable_expression
+                (identifier)))
             (index)
             (index
-              (identifier)))
+              (variable_expression
+                (identifier))))
           (index
             (integer_literal))
           (index
@@ -5796,7 +6703,8 @@ generated quantities {
           (index
             (integer_literal)))
         (indexed_expression
-          (identifier)
+          (variable_expression
+            (identifier))
           (index
             (integer_literal))
           (index
@@ -5807,10 +6715,12 @@ generated quantities {
         (string_literal)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (left_colon_expression
             (integer_literal)))
@@ -5819,10 +6729,12 @@ generated quantities {
         (index)))
     (assignment_statement
       (lhs
-        (identifier))
+        (variable_expression
+          (identifier)))
       (assignment_op)
       (indexed_expression
-        (identifier)
+        (variable_expression
+          (identifier))
         (index
           (right_colon_expression
             (integer_literal)))

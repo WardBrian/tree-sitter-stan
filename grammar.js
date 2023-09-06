@@ -597,7 +597,8 @@ module.exports = grammar({
         ),
 
         tuple_projection: $ => seq(
-            $._common_expression, '.', $.integer_literal
+            $._common_expression, '.',
+            field("idx", token.immediate(/[0-9]+/))
         ),
 
         vector_expression: $ => prec(PREC.BRACKET, seq(
@@ -761,7 +762,8 @@ module.exports = grammar({
         tuple_proj_lhs: $ => seq(
             $.lhs,
             '.',
-            $.integer_literal,
+            field("idx",
+                token.immediate(/[0-9]+/)),
         ),
 
         /* eslint-disable no-unused-vars */

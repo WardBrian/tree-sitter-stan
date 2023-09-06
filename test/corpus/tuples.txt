@@ -137,8 +137,7 @@ model {
             (tuple_proj_lhs
               (lhs
                 (variable_expression
-                  (identifier)))
-              (integer_literal)))
+                  (identifier)))))
           (index
             (integer_literal))))
       (assignment_op)
@@ -148,8 +147,7 @@ model {
     (print_statement
       (tuple_projection
         (variable_expression
-          (identifier))
-        (integer_literal)))
+          (identifier))))
     (print_statement
       (tuple_expression
         (real_literal
@@ -175,5 +173,4 @@ model {
       (identifier)
       (tuple_projection
         (variable_expression
-          (identifier))
-        (integer_literal)))))
+          (identifier))))))

@@ -2332,8 +2332,15 @@
           "value": "."
         },
         {
-          "type": "SYMBOL",
-          "name": "integer_literal"
+          "type": "FIELD",
+          "name": "idx",
+          "content": {
+            "type": "IMMEDIATE_TOKEN",
+            "content": {
+              "type": "PATTERN",
+              "value": "[0-9]+"
+            }
+          }
         }
       ]
     },
@@ -3913,8 +3920,15 @@
           "value": "."
         },
         {
-          "type": "SYMBOL",
-          "name": "integer_literal"
+          "type": "FIELD",
+          "name": "idx",
+          "content": {
+            "type": "IMMEDIATE_TOKEN",
+            "content": {
+              "type": "PATTERN",
+              "value": "[0-9]+"
+            }
+          }
         }
       ]
     },

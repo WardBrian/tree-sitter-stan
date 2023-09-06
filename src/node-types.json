@@ -4769,13 +4769,9 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "integer_literal",
-          "named": true
-        },
         {
           "type": "lhs",
           "named": true
@@ -4788,7 +4784,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {

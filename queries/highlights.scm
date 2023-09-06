@@ -64,6 +64,10 @@ name: (identifier) @function
 name: (identifier) @function.call
 )
 
+(function_statement
+name: (identifier) @function.call
+)
+
 (distr_expression
 name: (identifier) @function.call
 )
@@ -84,6 +88,7 @@ name: (identifier) @function.call
     "real"
     "complex"
     "array"
+    "tuple"
     "vector"
     "simplex"
     "unit_vector"

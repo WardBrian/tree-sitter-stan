@@ -271,11 +271,13 @@ model {
         (identifier))
       (assignment_statement
         (lhs
-          (variable_expression
-            (identifier))
-          (index
-            (variable_expression
-              (identifier))))
+          (indexed_lhs
+            (lhs
+              (variable_expression
+                (identifier)))
+            (index
+              (variable_expression
+                (identifier)))))
         (assignment_op)
         (infix_op_expression
           (variable_expression
@@ -336,14 +338,20 @@ generated quantities {
       (identifier))
     (assignment_statement
       (lhs
-        (variable_expression
-          (identifier))
-        (index
-          (integer_literal))
-        (index
-          (integer_literal))
-        (index
-          (integer_literal)))
+        (indexed_lhs
+          (lhs
+            (indexed_lhs
+              (lhs
+                (indexed_lhs
+                  (lhs
+                    (variable_expression
+                      (identifier)))
+                  (index
+                    (integer_literal))))
+              (index
+                (integer_literal))))
+          (index
+            (integer_literal))))
       (assignment_op)
       (indexed_expression
         (indexed_expression
@@ -358,14 +366,20 @@ generated quantities {
           (integer_literal))))
     (assignment_statement
       (lhs
-        (variable_expression
-          (identifier))
-        (index
-          (integer_literal))
-        (index
-          (integer_literal))
-        (index
-          (integer_literal)))
+        (indexed_lhs
+          (lhs
+            (indexed_lhs
+              (lhs
+                (indexed_lhs
+                  (lhs
+                    (variable_expression
+                      (identifier)))
+                  (index
+                    (integer_literal))))
+              (index
+                (integer_literal))))
+          (index
+            (integer_literal))))
       (assignment_op)
       (indexed_expression
         (variable_expression
@@ -378,13 +392,15 @@ generated quantities {
           (integer_literal))))
     (assignment_statement
       (lhs
-        (variable_expression
-          (identifier))
-        (index
-          (integer_literal))
-        (index)
-        (index
-          (integer_literal)))
+        (indexed_lhs
+          (lhs
+            (variable_expression
+              (identifier)))
+          (index
+            (integer_literal))
+          (index)
+          (index
+            (integer_literal))))
       (assignment_op)
       (indexed_expression
         (variable_expression

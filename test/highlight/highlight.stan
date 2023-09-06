@@ -19,11 +19,20 @@ functions {
   #include <more_functions.stan>
   // <- keyword
   //         ^ string.special
+
+  void foo(tuple(int, real) x) {
+  //        ^ type
+  }
 }
 
 data {
    vector[4] x;
      //      ^ variable
+   tuple(array[3] real, int) tup;
+   // ^ type
+   //     ^ type
+    //             ^ type
+    //                   ^ type
 }
 parameters {
   real e;

@@ -912,10 +912,12 @@ generated quantities {
           (identifier))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (integer_literal)))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (integer_literal))))
           (assignment_op)
           (indexed_expression
             (variable_expression
@@ -924,10 +926,12 @@ generated quantities {
               (integer_literal))))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (integer_literal)))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (integer_literal))))
           (assignment_op)
           (infix_op_expression
             (prefix_op_expression
@@ -1717,10 +1721,12 @@ generated quantities {
             (identifier)))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (integer_literal)))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (integer_literal))))
           (assignment_op)
           (indexed_expression
             (variable_expression
@@ -1729,12 +1735,14 @@ generated quantities {
               (integer_literal))))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (colon_expression
-                (integer_literal)
-                (integer_literal))))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (colon_expression
+                  (integer_literal)
+                  (integer_literal)))))
           (assignment_op)
           (indexed_expression
             (variable_expression
@@ -2650,16 +2658,18 @@ generated quantities {
           (identifier))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (integer_literal))
-            (index
-              (integer_literal))
-            (index
-              (integer_literal))
-            (index
-              (integer_literal)))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (integer_literal))
+              (index
+                (integer_literal))
+              (index
+                (integer_literal))
+              (index
+                (integer_literal))))
           (assignment_op)
           (variable_expression
             (identifier)))))
@@ -2826,10 +2836,12 @@ generated quantities {
           (identifier))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (integer_literal)))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (integer_literal))))
           (assignment_op)
           (infix_op_expression
             (indexed_expression
@@ -2844,10 +2856,12 @@ generated quantities {
                 (integer_literal)))))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (integer_literal)))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (integer_literal))))
           (assignment_op)
           (infix_op_expression
             (indexed_expression
@@ -2895,10 +2909,12 @@ generated quantities {
           (identifier))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (integer_literal)))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (integer_literal))))
           (assignment_op)
           (real_literal
             (integer_literal)
@@ -3449,20 +3465,22 @@ generated quantities {
                   (block_statement
                     (assignment_statement
                       (lhs
-                        (variable_expression
-                          (identifier))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier))))
+                        (indexed_lhs
+                          (lhs
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))))
                       (assignment_op)
                       (real_literal
                         (integer_literal)
@@ -3475,11 +3493,13 @@ generated quantities {
       (block_statement
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (variable_expression
-                (identifier))))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (variable_expression
+                  (identifier)))))
           (assignment_op)
           (infix_op_expression
             (real_literal
@@ -3495,14 +3515,16 @@ generated quantities {
           (block_statement
             (assignment_statement
               (lhs
-                (variable_expression
-                  (identifier))
-                (index
-                  (variable_expression
-                    (identifier)))
-                (index
-                  (variable_expression
-                    (identifier))))
+                (indexed_lhs
+                  (lhs
+                    (variable_expression
+                      (identifier)))
+                  (index
+                    (variable_expression
+                      (identifier)))
+                  (index
+                    (variable_expression
+                      (identifier)))))
               (assignment_op)
               (infix_op_expression
                 (real_literal
@@ -3524,20 +3546,22 @@ generated quantities {
                   (block_statement
                     (assignment_statement
                       (lhs
-                        (variable_expression
-                          (identifier))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier))))
+                        (indexed_lhs
+                          (lhs
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))))
                       (assignment_op)
                       (infix_op_expression
                         (real_literal
@@ -3717,14 +3741,16 @@ generated quantities {
       (identifier))
     (assignment_statement
       (lhs
-        (variable_expression
-          (identifier))
-        (index
-          (integer_literal))
-        (index
-          (colon_expression
-            (integer_literal)
-            (integer_literal))))
+        (indexed_lhs
+          (lhs
+            (variable_expression
+              (identifier)))
+          (index
+            (integer_literal))
+          (index
+            (colon_expression
+              (integer_literal)
+              (integer_literal)))))
       (assignment_op)
       (array_expression
         (integer_literal)
@@ -5427,20 +5453,22 @@ generated quantities {
                   (block_statement
                     (assignment_statement
                       (lhs
-                        (variable_expression
-                          (identifier))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier))))
+                        (indexed_lhs
+                          (lhs
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))))
                       (assignment_op)
                       (real_literal
                         (integer_literal)
@@ -5452,11 +5480,13 @@ generated quantities {
         (identifier))
       (assignment_statement
         (lhs
-          (variable_expression
-            (identifier))
-          (index
-            (variable_expression
-              (identifier))))
+          (indexed_lhs
+            (lhs
+              (variable_expression
+                (identifier)))
+            (index
+              (variable_expression
+                (identifier)))))
         (assignment_op)
         (infix_op_expression
           (prefix_op_expression
@@ -6374,20 +6404,22 @@ generated quantities {
                   (block_statement
                     (assignment_statement
                       (lhs
-                        (variable_expression
-                          (identifier))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier)))
-                        (index
-                          (variable_expression
-                            (identifier))))
+                        (indexed_lhs
+                          (lhs
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))
+                          (index
+                            (variable_expression
+                              (identifier)))))
                       (assignment_op)
                       (real_literal
                         (integer_literal)
@@ -6399,11 +6431,13 @@ generated quantities {
         (identifier))
       (assignment_statement
         (lhs
-          (variable_expression
-            (identifier))
-          (index
-            (variable_expression
-              (identifier))))
+          (indexed_lhs
+            (lhs
+              (variable_expression
+                (identifier)))
+            (index
+              (variable_expression
+                (identifier)))))
         (assignment_op)
         (infix_op_expression
           (prefix_op_expression
@@ -6431,17 +6465,19 @@ generated quantities {
           (integer_literal)
           (assignment_statement
             (lhs
-              (variable_expression
-                (identifier))
-              (index
-                (variable_expression
-                  (identifier)))
-              (index
-                (variable_expression
-                  (identifier)))
-              (index
-                (variable_expression
-                  (identifier))))
+              (indexed_lhs
+                (lhs
+                  (variable_expression
+                    (identifier)))
+                (index
+                  (variable_expression
+                    (identifier)))
+                (index
+                  (variable_expression
+                    (identifier)))
+                (index
+                  (variable_expression
+                    (identifier)))))
             (assignment_op)
             (function_expression
               (identifier)
@@ -6467,14 +6503,16 @@ generated quantities {
               (identifier))))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (variable_expression
-                (identifier)))
-            (index
-              (variable_expression
-                (identifier))))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (variable_expression
+                  (identifier)))
+              (index
+                (variable_expression
+                  (identifier)))))
           (assignment_op)
           (indexed_expression
             (variable_expression
@@ -6551,14 +6589,16 @@ generated quantities {
               (identifier))))
         (assignment_statement
           (lhs
-            (variable_expression
-              (identifier))
-            (index
-              (variable_expression
-                (identifier)))
-            (index
-              (variable_expression
-                (identifier))))
+            (indexed_lhs
+              (lhs
+                (variable_expression
+                  (identifier)))
+              (index
+                (variable_expression
+                  (identifier)))
+              (index
+                (variable_expression
+                  (identifier)))))
           (assignment_op)
           (indexed_expression
             (variable_expression
@@ -6636,17 +6676,19 @@ generated quantities {
                 (identifier))))
           (assignment_statement
             (lhs
-              (variable_expression
-                (identifier))
-              (index
-                (variable_expression
-                  (identifier)))
-              (index
-                (variable_expression
-                  (identifier)))
-              (index
-                (variable_expression
-                  (identifier))))
+              (indexed_lhs
+                (lhs
+                  (variable_expression
+                    (identifier)))
+                (index
+                  (variable_expression
+                    (identifier)))
+                (index
+                  (variable_expression
+                    (identifier)))
+                (index
+                  (variable_expression
+                    (identifier)))))
             (assignment_op)
             (indexed_expression
               (variable_expression

@@ -56,6 +56,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -123,6 +131,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -187,6 +203,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -270,6 +294,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -318,7 +350,7 @@
           "named": true
         },
         {
-          "type": "function_expression",
+          "type": "function_statement",
           "named": true
         },
         {
@@ -426,6 +458,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -490,6 +530,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -560,6 +608,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -627,6 +683,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -691,6 +755,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -766,6 +838,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -830,6 +910,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -905,6 +993,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -969,6 +1065,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -1051,6 +1155,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -1175,6 +1287,10 @@
           "named": true
         },
         {
+          "type": "function_statement",
+          "named": true
+        },
+        {
           "type": "if_statement",
           "named": true
         },
@@ -1236,6 +1352,14 @@
         },
         {
           "type": "target_statement",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -1316,7 +1440,7 @@
             "named": true
           },
           {
-            "type": "function_expression",
+            "type": "function_statement",
             "named": true
           },
           {
@@ -1400,6 +1524,32 @@
     }
   },
   {
+    "type": "function_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "argument_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "functions",
     "named": true,
     "fields": {},
@@ -1447,7 +1597,7 @@
           "named": true
         },
         {
-          "type": "function_expression",
+          "type": "function_statement",
           "named": true
         },
         {
@@ -1542,6 +1692,10 @@
           "named": true
         },
         {
+          "type": "function_statement",
+          "named": true
+        },
+        {
           "type": "if_statement",
           "named": true
         },
@@ -1603,6 +1757,14 @@
         },
         {
           "type": "target_statement",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -1712,6 +1874,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -1783,11 +1953,38 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
         {
           "type": "vector_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "indexed_lhs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "lhs",
           "named": true
         }
       ]
@@ -1847,6 +2044,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -1944,6 +2149,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -1959,11 +2172,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "index",
+          "type": "indexed_lhs",
+          "named": true
+        },
+        {
+          "type": "tuple_proj_lhs",
           "named": true
         },
         {
@@ -2027,6 +2244,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -2097,6 +2322,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -2161,6 +2394,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -2231,6 +2472,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "type_constraint",
           "named": true
         },
@@ -2278,7 +2527,7 @@
           "named": true
         },
         {
-          "type": "function_expression",
+          "type": "function_statement",
           "named": true
         },
         {
@@ -2377,6 +2626,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -2441,6 +2698,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -2567,6 +2832,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -2631,6 +2904,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -2701,6 +2982,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -2765,6 +3054,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -2865,6 +3162,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -2908,7 +3213,7 @@
           "named": true
         },
         {
-          "type": "function_expression",
+          "type": "function_statement",
           "named": true
         },
         {
@@ -3050,6 +3355,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -3110,6 +3423,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -3176,6 +3497,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -3236,6 +3565,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -3344,6 +3681,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -3408,6 +3753,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -3493,6 +3846,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -3557,6 +3918,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -3654,6 +4023,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "upper_truncation",
           "named": true
         },
@@ -3725,6 +4102,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -3792,11 +4177,42 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
         {
           "type": "vector_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sized_tuple_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arr_dims",
+          "named": true
+        },
+        {
+          "type": "sized_basic_type",
+          "named": true
+        },
+        {
+          "type": "sized_tuple_type",
           "named": true
         }
       ]
@@ -3856,6 +4272,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -3945,6 +4369,18 @@
           "named": true
         },
         {
+          "type": "topvar_tuple_type",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -3984,6 +4420,10 @@
         },
         {
           "type": "top_var_type",
+          "named": true
+        },
+        {
+          "type": "topvar_tuple_type",
           "named": true
         }
       ]
@@ -4069,6 +4509,29 @@
     }
   },
   {
+    "type": "topvar_tuple_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arr_dims",
+          "named": true
+        },
+        {
+          "type": "top_var_type",
+          "named": true
+        },
+        {
+          "type": "topvar_tuple_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "transformed_data",
     "named": true,
     "fields": {},
@@ -4101,7 +4564,7 @@
           "named": true
         },
         {
-          "type": "function_expression",
+          "type": "function_statement",
           "named": true
         },
         {
@@ -4180,7 +4643,7 @@
           "named": true
         },
         {
-          "type": "function_expression",
+          "type": "function_statement",
           "named": true
         },
         {
@@ -4221,6 +4684,155 @@
         },
         {
           "type": "while_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tuple_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "conditional_expression",
+          "named": true
+        },
+        {
+          "type": "distr_expression",
+          "named": true
+        },
+        {
+          "type": "function_expression",
+          "named": true
+        },
+        {
+          "type": "imag_literal",
+          "named": true
+        },
+        {
+          "type": "indexed_expression",
+          "named": true
+        },
+        {
+          "type": "infix_op_expression",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "parenthized_expression",
+          "named": true
+        },
+        {
+          "type": "postfix_op_expression",
+          "named": true
+        },
+        {
+          "type": "prefix_op_expression",
+          "named": true
+        },
+        {
+          "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
+          "type": "variable_expression",
+          "named": true
+        },
+        {
+          "type": "vector_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tuple_proj_lhs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "lhs",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tuple_projection",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "distr_expression",
+          "named": true
+        },
+        {
+          "type": "function_expression",
+          "named": true
+        },
+        {
+          "type": "imag_literal",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "parenthized_expression",
+          "named": true
+        },
+        {
+          "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
+          "type": "variable_expression",
+          "named": true
+        },
+        {
+          "type": "vector_expression",
           "named": true
         }
       ]
@@ -4314,6 +4926,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -4330,6 +4950,21 @@
     "fields": {}
   },
   {
+    "type": "unsized_tuple_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "unsized_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "unsized_type",
     "named": true,
     "fields": {},
@@ -4343,6 +4978,10 @@
         },
         {
           "type": "unsized_dims",
+          "named": true
+        },
+        {
+          "type": "unsized_tuple_type",
           "named": true
         }
       ]
@@ -4402,6 +5041,14 @@
         },
         {
           "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -4491,6 +5138,18 @@
           "named": true
         },
         {
+          "type": "sized_tuple_type",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -4573,6 +5232,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "variable_expression",
           "named": true
         },
@@ -4640,6 +5307,14 @@
           "named": true
         },
         {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
           "type": "type_constraint",
           "named": true
         },
@@ -4700,6 +5375,10 @@
         },
         {
           "type": "function_expression",
+          "named": true
+        },
+        {
+          "type": "function_statement",
           "named": true
         },
         {
@@ -4764,6 +5443,14 @@
         },
         {
           "type": "target_statement",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
           "named": true
         },
         {
@@ -5123,6 +5810,10 @@
   },
   {
     "type": "transformed parameters",
+    "named": false
+  },
+  {
+    "type": "tuple",
     "named": false
   },
   {

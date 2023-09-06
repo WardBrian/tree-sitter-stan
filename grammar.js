@@ -1,4 +1,3 @@
-/* global alias, choice, grammar, optional, prec, repeat, seq, token */
 const PREC = {
     ASSIGN: -2,
     CONDITIONAL: -1,
@@ -31,6 +30,13 @@ const PREC = {
     RANGE: 13,
 };
 
+function commaSep2(rule) {
+    return seq(
+        rule,
+        repeat1(seq(',', rule)),
+    );
+}
+
 function commaSep1(rule) {
     return seq(
         rule,
@@ -45,7 +51,6 @@ function commaSep(rule) {
 
 function decl($, type_rule, expr_rule) {
     return seq(
-        optional($.arr_dims),
         type_rule,
         commaSep1(seq(field("name", $.identifier)
             , optional(seq('=', expr_rule)))),
@@ -121,7 +126,6 @@ module.exports = grammar({
         [$._common_expression, $.lhs],
         [$._expression, $._range_expression],
         [$._common_expression, $.block_statement],
-        [$._common_expression, $._top_vardecl_or_statement],
         [$.transformed_data, $._common_expression],
         [$.model, $._common_expression],
     ],
@@ -189,9 +193,9 @@ module.exports = grammar({
             '}',
         ),
 
-        var_decl: $ => decl($, $.sized_basic_type, $._expression),
-        top_var_decl: $ => choice(decl($, $.top_var_type, $._expression)),
-        top_var_decl_no_assign: $ => choice(decl($, $.top_var_type, "<<<UNREACHABLE TOKEN>>>"), $.empty_statement),
+        var_decl: $ => decl($, $._sized_higher_type, $._expression),
+        top_var_decl: $ => choice(decl($, $._topvar_higher_type, $._expression)),
+        top_var_decl_no_assign: $ => choice(decl($, $._topvar_higher_type, "<<<UNREACHABLE TOKEN>>>"), $.empty_statement),
 
         _vardecl_or_statement: $ => choice(
             $._statement,
@@ -233,7 +237,15 @@ module.exports = grammar({
 
         unsized_type: $ => choice(
             seq("array", $.unsized_dims, $.basic_type),
-            $.basic_type),
+            seq("array", $.unsized_dims, $.unsized_tuple_type),
+            $.basic_type, $.unsized_tuple_type),
+
+        unsized_tuple_type: $ => seq(
+            'tuple',
+            '(',
+            commaSep2($.unsized_type),
+            ')',
+        ),
 
         unsized_dims: $ => seq(
             '[',
@@ -252,6 +264,26 @@ module.exports = grammar({
             seq('complex_row_vector', '[', $._expression, ']'),
             seq('complex_matrix', '[', $._expression, ',', $._expression, ']'),
         )),
+
+        // unfortunate duplication with topvar types
+        _sized_higher_type: $ => choice(
+            $._sized_array_type,
+            $.sized_tuple_type,
+            $.sized_basic_type
+        ),
+
+        _sized_array_type: $ => choice(seq(
+            $.arr_dims, $.sized_basic_type
+        ),
+            seq($.arr_dims, $.sized_tuple_type)
+        ),
+
+        sized_tuple_type: $ => seq(
+            'tuple',
+            '(',
+            commaSep2($._sized_higher_type),
+            ')',
+        ),
 
         /* eslint-disable no-unused-vars */
         basic_type: $ => prec.dynamic(1, choice(
@@ -287,6 +319,24 @@ module.exports = grammar({
             $.cholesky_factor_corr_type,
             $.cov_matrix_type,
             $.corr_matrix_type,
+        ),
+
+        _topvar_higher_type: $ => choice(
+            $._topvar_array_type,
+            $.topvar_tuple_type,
+            $.top_var_type
+        ),
+
+        _topvar_array_type: $ => seq($.arr_dims, choice(
+            $.top_var_type,
+            $.topvar_tuple_type)
+        ),
+
+        topvar_tuple_type: $ => seq(
+            'tuple',
+            '(',
+            commaSep2($._topvar_higher_type),
+            ')',
         ),
 
         arr_dims: $ => seq(
@@ -516,9 +566,11 @@ module.exports = grammar({
             $.imag_literal,
             $.variable_expression,
             $.array_expression,
+            $.tuple_expression,
             $.vector_expression,
             $.function_expression,
             $.distr_expression,
+            $.tuple_projection,
             $.parenthized_expression,
         ),
 
@@ -536,6 +588,16 @@ module.exports = grammar({
             '{',
             commaSep($._expression),
             '}',
+        ),
+
+        tuple_expression: $ => seq(
+            '(',
+            commaSep2($._expression),
+            ')',
+        ),
+
+        tuple_projection: $ => seq(
+            $._common_expression, '.', $.integer_literal
         ),
 
         vector_expression: $ => prec(PREC.BRACKET, seq(
@@ -587,10 +649,10 @@ module.exports = grammar({
             ']',
         )),
 
-        function_expression: $ => prec(PREC.FUNCTION, seq(
+        function_expression: $ => seq(
             field("name", $.identifier),
             $.argument_list,
-        )),
+        ),
 
         argument_list: $ => prec.dynamic(1, seq(
             '(',
@@ -659,7 +721,7 @@ module.exports = grammar({
             $.empty_statement,
             $.assignment_statement,
             $.sampling_statement,
-            $.function_expression,
+            $.function_statement,
             $.log_prob_statement,
             $.target_statement,
             $.break_statement,
@@ -685,10 +747,21 @@ module.exports = grammar({
             ';',
         )),
 
-        lhs: $ => seq(
+        lhs: $ => choice(
             $.variable_expression,
-            optional(
-                repeat(seq('[', commaSep1(optional($.index)), ']'))),
+            $.indexed_lhs,
+            $.tuple_proj_lhs,
+        ),
+
+        indexed_lhs: $ => prec.left(PREC.INDEX, seq(
+            $.lhs,
+            '[', commaSep1($.index), ']'
+        )),
+
+        tuple_proj_lhs: $ => seq(
+            $.lhs,
+            '.',
+            $.integer_literal,
         ),
 
         /* eslint-disable no-unused-vars */
@@ -703,10 +776,17 @@ module.exports = grammar({
         ),
         /* eslint-enable no-unused-vars */
 
+        function_statement: $ => prec(PREC.FUNCTION, seq(
+            field("name", $.identifier),
+            $.argument_list,
+            ';',
+        )),
+
+
         sampling_statement: $ => seq(
             $._expression,
             '~',
-            field("name",$.identifier),
+            field("name", $.identifier),
             '(',
             commaSep($._expression),
             ')',

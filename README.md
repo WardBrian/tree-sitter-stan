@@ -16,3 +16,13 @@ Note: The `@wardbrian` scope is necessary because the `tree-sitter-stan` package
 already taken by a [previous attempt by jrnold](https://github.com/jrnold/tree-sitter-stan),
 which this version is loosely based on.
 
+
+## Usage
+
+### Emacs
+
+See [stan-ts-mode](https://github.com/WardBrian/stan-ts-mode) for Emacs 29+
+
+### Neovim
+
+This can be used with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter/#adding-parsers)

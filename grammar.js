@@ -729,6 +729,7 @@ module.exports = grammar({
             $.continue_statement,
             $.print_statement,
             $.reject_statement,
+            $.fatal_error_statement,
             $.return_statement,
             $.if_statement,
             $.while_statement,
@@ -752,12 +753,18 @@ module.exports = grammar({
             $.variable_expression,
             $.indexed_lhs,
             $.tuple_proj_lhs,
+            $.tuple_pack_lhs,
         ),
 
         indexed_lhs: $ => prec.left(PREC.INDEX, seq(
             $.lhs,
             '[', commaSep1($.index), ']'
         )),
+
+
+        tuple_pack_lhs: $ => seq(
+            '(', commaSep1($.lhs), ')'
+        ),
 
         tuple_proj_lhs: $ => seq(
             $.lhs,
@@ -888,6 +895,16 @@ module.exports = grammar({
             ')',
             ';',
         ),
+
+
+        fatal_error_statement: $ => seq(
+            'fatal_error',
+            '(',
+            optional(commaSep(choice($._expression, $.string_literal))),
+            ')',
+            ';',
+        ),
+
 
         return_statement: $ => seq(
             'return',

@@ -346,6 +346,10 @@
           "named": true
         },
         {
+          "type": "fatal_error_statement",
+          "named": true
+        },
+        {
           "type": "for_statement",
           "named": true
         },
@@ -1228,6 +1232,85 @@
     }
   },
   {
+    "type": "fatal_error_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "conditional_expression",
+          "named": true
+        },
+        {
+          "type": "distr_expression",
+          "named": true
+        },
+        {
+          "type": "function_expression",
+          "named": true
+        },
+        {
+          "type": "imag_literal",
+          "named": true
+        },
+        {
+          "type": "indexed_expression",
+          "named": true
+        },
+        {
+          "type": "infix_op_expression",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "parenthized_expression",
+          "named": true
+        },
+        {
+          "type": "postfix_op_expression",
+          "named": true
+        },
+        {
+          "type": "prefix_op_expression",
+          "named": true
+        },
+        {
+          "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
+          "type": "variable_expression",
+          "named": true
+        },
+        {
+          "type": "vector_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "for_statement",
     "named": true,
     "fields": {
@@ -1276,6 +1359,10 @@
         },
         {
           "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "fatal_error_statement",
           "named": true
         },
         {
@@ -1436,6 +1523,10 @@
             "named": true
           },
           {
+            "type": "fatal_error_statement",
+            "named": true
+          },
+          {
             "type": "for_statement",
             "named": true
           },
@@ -1593,6 +1684,10 @@
           "named": true
         },
         {
+          "type": "fatal_error_statement",
+          "named": true
+        },
+        {
           "type": "for_statement",
           "named": true
         },
@@ -1681,6 +1776,10 @@
         },
         {
           "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "fatal_error_statement",
           "named": true
         },
         {
@@ -2180,6 +2279,10 @@
           "named": true
         },
         {
+          "type": "tuple_pack_lhs",
+          "named": true
+        },
+        {
           "type": "tuple_proj_lhs",
           "named": true
         },
@@ -2520,6 +2623,10 @@
         },
         {
           "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "fatal_error_statement",
           "named": true
         },
         {
@@ -3206,6 +3313,10 @@
         },
         {
           "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "fatal_error_statement",
           "named": true
         },
         {
@@ -4560,6 +4671,10 @@
           "named": true
         },
         {
+          "type": "fatal_error_statement",
+          "named": true
+        },
+        {
           "type": "for_statement",
           "named": true
         },
@@ -4636,6 +4751,10 @@
         },
         {
           "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "fatal_error_statement",
           "named": true
         },
         {
@@ -4759,6 +4878,21 @@
         },
         {
           "type": "vector_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tuple_pack_lhs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lhs",
           "named": true
         }
       ]
@@ -5366,6 +5500,10 @@
           "named": true
         },
         {
+          "type": "fatal_error_statement",
+          "named": true
+        },
+        {
           "type": "for_statement",
           "named": true
         },
@@ -5686,6 +5824,10 @@
   },
   {
     "type": "else",
+    "named": false
+  },
+  {
+    "type": "fatal_error",
     "named": false
   },
   {

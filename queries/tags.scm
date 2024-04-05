@@ -24,3 +24,6 @@
 
 (reject_statement
 "reject" @name) @reference.call
+
+(fatal_error_statement
+"fatal_error" @name) @reference.call

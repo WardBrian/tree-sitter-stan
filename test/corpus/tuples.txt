@@ -174,3 +174,55 @@ model {
       (tuple_projection
         (variable_expression
           (identifier))))))
+
+================================================================================
+Tuples - unpacking
+================================================================================
+
+model {
+    tuple(array[2] real, int) baz = ({1.2, 3.4}, 4);
+    int foo;
+    array[2] real bar;
+    (bar, foo) = baz;
+}
+
+--------------------------------------------------------------------------------
+
+(program
+  (model
+    (var_decl
+      (sized_tuple_type
+        (arr_dims
+          (integer_literal))
+        (sized_basic_type)
+        (sized_basic_type))
+      (identifier)
+      (tuple_expression
+        (array_expression
+          (real_literal
+            (integer_literal)
+            (integer_literal))
+          (real_literal
+            (integer_literal)
+            (integer_literal)))
+        (integer_literal)))
+    (var_decl
+      (sized_basic_type)
+      (identifier))
+    (var_decl
+      (arr_dims
+        (integer_literal))
+      (sized_basic_type)
+      (identifier))
+    (assignment_statement
+      (lhs
+        (tuple_pack_lhs
+          (lhs
+            (variable_expression
+              (identifier)))
+          (lhs
+            (variable_expression
+              (identifier)))))
+      (assignment_op)
+      (variable_expression
+        (identifier)))))

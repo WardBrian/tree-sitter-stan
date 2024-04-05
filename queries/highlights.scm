@@ -82,6 +82,9 @@ name: (identifier) @function.call
 (reject_statement
 "reject" @function.call)
 
+(fatal_error_statement
+"fatal_error" @function.call)
+
 [
     "data"
     "int"

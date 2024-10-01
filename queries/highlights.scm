@@ -1,11 +1,5 @@
-; these probably shouldn't be modules
-(functions "functions" @module)
-(data "data" @module)
-(transformed_data "transformed data" @module)
-(parameters "parameters" @module)
-(transformed_parameters "transformed parameters" @module)
-(model "model" @module)
-(generated_quantities "generated quantities" @module)
+(identifier) @variable
+
 
 (comment) @comment
 (string_literal) @string
@@ -148,4 +142,11 @@ loopvar: (identifier) @variable.parameter
 parameter: (identifier) @variable.parameter
 )
 
-(identifier) @variable
+; these probably shouldn't be modules
+(functions "functions" @module)
+(data "data" @module)
+(transformed_data "transformed data" @module)
+(parameters "parameters" @module)
+(transformed_parameters "transformed parameters" @module)
+(model "model" @module)
+(generated_quantities "generated quantities" @module)

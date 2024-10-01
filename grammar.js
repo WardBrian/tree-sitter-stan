@@ -124,10 +124,6 @@ module.exports = grammar({
     conflicts: $ => [
         [$.array_expression, $.block_statement],
         [$._common_expression, $.lhs],
-        [$._expression, $._range_expression],
-        [$._common_expression, $.block_statement],
-        [$.transformed_data, $._common_expression],
-        [$.model, $._common_expression],
     ],
 
     word: $ => $.identifier,

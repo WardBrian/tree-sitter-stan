@@ -1,12 +1,13 @@
 functions {
 // <- module
 //        ^ punctuation.bracket
-  vector rhs(real t, vector y, real alpha) {
+  vector rhs(real t, vector y, data real alpha) {
   // <- type
   //     ^ function
   //        ^ punctuation.bracket
   //         ^ type
   //              ^ variable.parameter
+  //                            ^ type
     vector[1] yp = -alpha * y;
   //^ type
   //       ^ number
@@ -26,6 +27,7 @@ functions {
 }
 
 data {
+// <- module
    vector[4] x;
      //      ^ variable
    tuple(array[3] real, int) tup;
@@ -35,6 +37,8 @@ data {
     //                   ^ type
 }
 parameters {
+// <- module
+
   real e;
   //   ^ variable
   real<lower=0> read_constrain_lb;
@@ -42,6 +46,8 @@ parameters {
   //             ^ variable
 }
 transformed parameters {
+// <- module
+
   real mu;
   mu = e() + e;
   //   ^ function.call
@@ -70,6 +76,7 @@ transformed parameters {
   }
 }
 model {
+// <- module
   print("hello world");
   //^ function.call
   //    ^ string

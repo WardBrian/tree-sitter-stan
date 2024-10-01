@@ -89,6 +89,7 @@ name: (identifier) @function.call
     "vector"
     "simplex"
     "unit_vector"
+    "sum_to_zero_vector"
     "ordered"
     "positive_ordered"
     "row_vector"
@@ -100,6 +101,8 @@ name: (identifier) @function.call
     "cov_matrix"
     "cholesky_factor_cov"
     "cholesky_factor_corr"
+    "column_stochastic_matrix"
+    "row_stochastic_matrix"
     "void"
 ]@type
 
@@ -134,6 +137,8 @@ name: (identifier) @function.call
 
 (profile_statement "profile" @keyword)
 
+(target_statement "target" @keyword "+=" @keyword)
+(jacobian_statement "jacobian" @keyword "+=" @keyword)
 
 (for_statement
 loopvar: (identifier) @variable.parameter

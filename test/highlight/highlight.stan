@@ -82,4 +82,10 @@ model {
   //    ^ string
   e ~ normal(0,1);
   //  ^ function.call
+  target += normal_lpdf(e | 0, 1);
+  //^ keyword
+  //      ^ keyword
+  //         ^ function.call
+  //                    ^ variable
+  //                      ^ punctuation.delimiter
 }

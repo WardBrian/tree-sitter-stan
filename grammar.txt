@@ -24,6 +24,7 @@
 
 <identifier> ::= IDENTIFIER
                | TRUNCATE
+               | JACOBIAN
 
 <decl_identifier> ::= <identifier>
                     | <reserved_word>
@@ -57,12 +58,16 @@
                   | POSITIVEORDERED
                   | SIMPLEX
                   | UNITVECTOR
+                  | SUMTOZERO
                   | CHOLESKYFACTORCORR
                   | CHOLESKYFACTORCOV
                   | CORRMATRIX
                   | COVMATRIX
+                  | STOCHASTICCOLUMNMATRIX
+                  | STOCHASTICROWMATRIX
                   | PRINT
                   | REJECT
+                  | FATAL_ERROR
                   | TARGET
                   | PROFILE
                   | TUPLE
@@ -82,6 +87,7 @@
 
 <unsized_type> ::= ARRAY <unsized_dims> <basic_type>
                  | ARRAY <unsized_dims> <unsized_tuple_type>
+                 | <basic_type> <unsized_dims>
                  | <basic_type>
                  | <unsized_tuple_type>
 
@@ -111,7 +117,9 @@
                                   <id_and_optional_assignment(rhs,
                                   <decl_identifier_after_comma>)>)*
 
-<decl(type_rule, rhs)> ::= <higher_type(type_rule)>
+<decl(type_rule, rhs)> ::= type_rule <decl_identifier> LBRACK <expression>
+                           (COMMA <expression>)* RBRACK
+                         | <higher_type(type_rule)>
                            <id_and_optional_assignment(rhs,
                            <decl_identifier>)>
                            [<remaining_declarations(rhs)>] SEMICOLON
@@ -161,11 +169,16 @@
                  | POSITIVEORDERED LBRACK <expression> RBRACK
                  | SIMPLEX LBRACK <expression> RBRACK
                  | UNITVECTOR LBRACK <expression> RBRACK
+                 | SUMTOZERO LBRACK <expression> RBRACK
                  | CHOLESKYFACTORCORR LBRACK <expression> RBRACK
                  | CHOLESKYFACTORCOV LBRACK <expression> [COMMA <expression>]
                    RBRACK
                  | CORRMATRIX LBRACK <expression> RBRACK
                  | COVMATRIX LBRACK <expression> RBRACK
+                 | STOCHASTICCOLUMNMATRIX LBRACK <expression> COMMA
+                   <expression> RBRACK
+                 | STOCHASTICROWMATRIX LBRACK <expression> COMMA <expression>
+                   RBRACK
 
 <type_constraint> ::= [LABRACK <range> RABRACK]
                     | LABRACK <offset_mult> RABRACK
@@ -272,6 +285,7 @@
                      | CONTINUE SEMICOLON
                      | PRINT LPAREN <printables> RPAREN SEMICOLON
                      | REJECT LPAREN <printables> RPAREN SEMICOLON
+                     | FATAL_ERROR LPAREN <printables> RPAREN SEMICOLON
                      | RETURN <expression> SEMICOLON
                      | RETURN SEMICOLON
                      | SEMICOLON

@@ -306,6 +306,7 @@ module.exports = grammar({
             $.positive_ordered_type,
             $.simplex_type,
             $.unit_vector_type,
+            $.sum_to_zero_vector_type,
             $.row_vector_type,
             $.matrix_type,
             $.complex_vector_type,
@@ -315,6 +316,8 @@ module.exports = grammar({
             $.cholesky_factor_corr_type,
             $.cov_matrix_type,
             $.corr_matrix_type,
+            $.row_stochastic_matrix_type,
+            $.column_stochastic_matrix_type,
         ),
 
         _topvar_higher_type: $ => choice(
@@ -390,6 +393,13 @@ module.exports = grammar({
             ']',
         ),
 
+        sum_to_zero_vector_type: $ => seq(
+            'sum_to_zero_vector',
+            '[',
+            $._expression,
+            ']',
+        ),
+
         row_vector_type: $ => seq(
             'row_vector',
             optional($.type_constraint),
@@ -457,6 +467,25 @@ module.exports = grammar({
             $._expression,
             ']',
         ),
+
+        column_stochastic_matrix_type: $ => seq(
+            'column_stochastic_matrix',
+            '[',
+            $._expression,
+            ',',
+            $._expression,
+            ']',
+        ),
+
+        row_stochastic_matrix_type: $ => seq(
+            'row_stochastic_matrix',
+            '[',
+            $._expression,
+            ',',
+            $._expression,
+            ']',
+        ),
+
 
         cov_matrix_type: $ => seq(
             'cov_matrix',
@@ -721,6 +750,7 @@ module.exports = grammar({
             $.function_statement,
             $.log_prob_statement,
             $.target_statement,
+            $.jacobian_statement,
             $.break_statement,
             $.continue_statement,
             $.print_statement,
@@ -858,6 +888,13 @@ module.exports = grammar({
 
         target_statement: $ => seq(
             'target',
+            '+=',
+            $._expression,
+            ';',
+        ),
+
+        jacobian_statement: $ => seq(
+            'jacobian',
             '+=',
             $._expression,
             ';',

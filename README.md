@@ -26,3 +26,7 @@ See [stan-ts-mode](https://github.com/WardBrian/stan-ts-mode) for Emacs 29+
 ### Neovim
 
 This can be used with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter/#adding-parsers)
+
+### Zed
+
+I have a minimal [Zed](https://zed.dev/) extension at https://github.com/WardBrian/zed-stan-extension

@@ -307,6 +307,7 @@ module.exports = grammar({
             $.simplex_type,
             $.unit_vector_type,
             $.sum_to_zero_vector_type,
+            $.sum_to_zero_matrix_type,
             $.row_vector_type,
             $.matrix_type,
             $.complex_vector_type,
@@ -396,6 +397,15 @@ module.exports = grammar({
         sum_to_zero_vector_type: $ => seq(
             'sum_to_zero_vector',
             '[',
+            $._expression,
+            ']',
+        ),
+
+        sum_to_zero_matrix_type: $ => seq(
+            'sum_to_zero_vector',
+            '[',
+            $._expression,
+            ',',
             $._expression,
             ']',
         ),

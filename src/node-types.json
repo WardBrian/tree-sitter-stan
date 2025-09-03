@@ -4583,6 +4583,81 @@
     }
   },
   {
+    "type": "sum_to_zero_matrix_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "conditional_expression",
+          "named": true
+        },
+        {
+          "type": "distr_expression",
+          "named": true
+        },
+        {
+          "type": "function_expression",
+          "named": true
+        },
+        {
+          "type": "imag_literal",
+          "named": true
+        },
+        {
+          "type": "indexed_expression",
+          "named": true
+        },
+        {
+          "type": "infix_op_expression",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "parenthized_expression",
+          "named": true
+        },
+        {
+          "type": "postfix_op_expression",
+          "named": true
+        },
+        {
+          "type": "prefix_op_expression",
+          "named": true
+        },
+        {
+          "type": "real_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_projection",
+          "named": true
+        },
+        {
+          "type": "variable_expression",
+          "named": true
+        },
+        {
+          "type": "vector_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "sum_to_zero_vector_type",
     "named": true,
     "fields": {},
@@ -4942,6 +5017,10 @@
         },
         {
           "type": "simplex_type",
+          "named": true
+        },
+        {
+          "type": "sum_to_zero_matrix_type",
           "named": true
         },
         {

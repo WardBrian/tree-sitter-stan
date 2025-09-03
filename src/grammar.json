@@ -1188,6 +1188,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "sum_to_zero_matrix_type"
+        },
+        {
+          "type": "SYMBOL",
           "name": "row_vector_type"
         },
         {
@@ -1536,6 +1540,35 @@
         {
           "type": "STRING",
           "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        }
+      ]
+    },
+    "sum_to_zero_matrix_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sum_to_zero_vector"
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
+        },
+        {
+          "type": "STRING",
+          "value": ","
         },
         {
           "type": "SYMBOL",

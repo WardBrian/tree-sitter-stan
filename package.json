@@ -13,7 +13,7 @@
   "author": "Brian Ward",
   "license": "MIT",
   "dependencies": {
-    "node-gyp": "^10.1.0",
+    "node-gyp": "^12.1.0",
     "node-addon-api": "^8.0.0",
     "node-gyp-build": "^4.8.1"
   },

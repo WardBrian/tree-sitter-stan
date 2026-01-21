@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "stan",
   "word": "identifier",
   "rules": {
@@ -5019,5 +5020,6 @@
     "_statement",
     "_vardecl_or_statement"
   ],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }

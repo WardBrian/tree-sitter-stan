@@ -1,11 +1,12 @@
 from unittest import TestCase
 
-import tree_sitter, tree_sitter_stan
+from tree_sitter import Language, Parser
+import tree_sitter_stan
 
 
 class TestLanguage(TestCase):
     def test_can_load_grammar(self):
         try:
-            tree_sitter.Language(tree_sitter_stan.language())
+            Parser(Language(tree_sitter_stan.language()))
         except Exception:
             self.fail("Error loading Stan grammar")

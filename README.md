@@ -1,13 +1,12 @@
 # tree-sitter-stan
 
 This is a [tree-sitter](https://tree-sitter.github.io/tree-sitter/) parser for the Stan language.
-It can parse the [latest Stan syntax](./grammar.txt), however, it does not necessarily parse
-deprecated language features which are scheduled for removal.
+It can parse the [latest Stan syntax](./grammar.txt).
 
 ## Installation
 
 ### NPM
-`tree-sitter-stan` is available on npm:
+`tree-sitter-stan` is available on [npm](https://www.npmjs.com/package/@wardbrian/tree-sitter-stan):
 ```bash
 npm i @wardbrian/tree-sitter-stan
 ```

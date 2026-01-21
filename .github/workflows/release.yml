@@ -6,10 +6,8 @@ on:
       - "v*"
 
 jobs:
-
   publish:
     runs-on: ubuntu-latest
-    environment: publishing
     permissions:
       id-token: write # OIDC
       contents: write
@@ -29,11 +27,16 @@ jobs:
 
       - name: Install dependencies
         run: |
-              npm install -g npm@latest
-              npm install
+          npm install -g npm@latest
+          npm install
+          npx tree-sitter generate
+          npx tree-sitter build
+          npx tree-sitter build --wasm
 
-      - run: npm test
-      - run: npx tree-sitter test
+      - name: Tests
+        run: |
+          npm test
+          npx tree-sitter test
 
       - name: Publish package
         run: npm publish

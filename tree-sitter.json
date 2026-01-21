@@ -14,7 +14,7 @@
     }
   ],
   "metadata": {
-    "version": "0.2.4",
+    "version": "0.2.5",
     "license": "MIT",
     "description": "A parser for the Stan modelling language",
     "authors": [

@@ -25,8 +25,7 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/WardBrian/tree-sitter-stan",
-      "funding": ""
+      "repository": "https://github.com/WardBrian/tree-sitter-stan"
     }
   },
   "bindings": {

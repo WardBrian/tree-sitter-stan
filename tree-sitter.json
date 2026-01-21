@@ -6,15 +6,16 @@
       "camelcase": "Stan",
       "title": "Stan",
       "scope": "source.stan",
-      "file-types": [
-        "stan"
-      ],
+      "file-types": ["stan"],
       "injection-regex": "^stan$",
-      "class-name": "TreeSitterStan"
+      "class-name": "TreeSitterStan",
+      "highlights": "./queries/highlights.scm",
+      "tags": "./queries/tags.scm",
+      "locals": "./queries/locals.scm"
     }
   ],
   "metadata": {
-    "version": "0.2.5",
+    "version": "0.2.6",
     "license": "MIT",
     "description": "A parser for the Stan modelling language",
     "authors": [

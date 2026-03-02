@@ -794,7 +794,10 @@ module.exports = grammar({
 
         indexed_lhs: $ => prec.left(PREC.INDEX, seq(
             $.lhs,
-            '[', commaSep1($.index), ']'
+            '[',
+            optional($.index),
+            repeat(seq(',', optional($.index))),
+            ']',
         )),
 
 

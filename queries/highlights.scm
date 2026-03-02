@@ -103,6 +103,7 @@ name: (identifier) @function.call
     "cholesky_factor_corr"
     "column_stochastic_matrix"
     "row_stochastic_matrix"
+    "sum_to_zero_matrix"
     "void"
 ]@type
 

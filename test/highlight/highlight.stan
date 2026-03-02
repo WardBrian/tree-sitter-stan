@@ -44,6 +44,8 @@ parameters {
   real<lower=0> read_constrain_lb;
   //    ^ property
   //             ^ variable
+  sum_to_zero_vector[5] z;
+  //^ type
 }
 transformed parameters {
 // <- module

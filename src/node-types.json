@@ -6385,6 +6385,10 @@
     "named": true
   },
   {
+    "type": "sum_to_zero_matrix",
+    "named": false
+  },
+  {
     "type": "sum_to_zero_vector",
     "named": false
   },

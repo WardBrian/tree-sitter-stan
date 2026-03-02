@@ -402,7 +402,7 @@ module.exports = grammar({
         ),
 
         sum_to_zero_matrix_type: $ => seq(
-            'sum_to_zero_vector',
+            'sum_to_zero_matrix',
             '[',
             $._expression,
             ',',

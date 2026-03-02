@@ -1557,7 +1557,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "sum_to_zero_vector"
+          "value": "sum_to_zero_matrix"
         },
         {
           "type": "STRING",

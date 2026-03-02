@@ -24,7 +24,6 @@
 
 <identifier> ::= IDENTIFIER
                | TRUNCATE
-               | JACOBIAN
 
 <decl_identifier> ::= <identifier>
                     | <reserved_word>
@@ -58,7 +57,8 @@
                   | POSITIVEORDERED
                   | SIMPLEX
                   | UNITVECTOR
-                  | SUMTOZERO
+                  | SUMTOZEROVEC
+                  | SUMTOZEROMAT
                   | CHOLESKYFACTORCORR
                   | CHOLESKYFACTORCOV
                   | CORRMATRIX
@@ -69,6 +69,7 @@
                   | REJECT
                   | FATAL_ERROR
                   | TARGET
+                  | JACOBIAN
                   | PROFILE
                   | TUPLE
                   | OFFSET
@@ -76,6 +77,24 @@
                   | LOWER
                   | UPPER
                   | ARRAY
+
+<no_constraints> ::= <basic_type> LABRACK UNREACHABLE
+                   | <constrained_vector> UNREACHABLE
+                   | <constrained_matrix> UNREACHABLE
+
+<constrained_vector> ::= ORDERED
+                       | POSITIVEORDERED
+                       | SIMPLEX
+                       | UNITVECTOR
+                       | SUMTOZEROVEC
+
+<constrained_matrix> ::= CHOLESKYFACTORCORR
+                       | CHOLESKYFACTORCOV
+                       | CORRMATRIX
+                       | COVMATRIX
+                       | SUMTOZEROMAT
+                       | STOCHASTICCOLUMNMATRIX
+                       | STOCHASTICROWMATRIX
 
 <function_def> ::= <return_type> <decl_identifier> LPAREN [<arg_decl> (COMMA
                    <arg_decl>)*] RPAREN <statement>
@@ -87,7 +106,7 @@
 
 <unsized_type> ::= ARRAY <unsized_dims> <basic_type>
                  | ARRAY <unsized_dims> <unsized_tuple_type>
-                 | <basic_type> <unsized_dims>
+                 | <basic_type> LBRACK UNREACHABLE
                  | <basic_type>
                  | <unsized_tuple_type>
 
@@ -103,6 +122,7 @@
                | COMPLEXVECTOR
                | COMPLEXROWVECTOR
                | COMPLEXMATRIX
+               | <no_constraints>
 
 <unsized_dims> ::= LBRACK COMMA* RBRACK
 
@@ -119,6 +139,7 @@
 
 <decl(type_rule, rhs)> ::= type_rule <decl_identifier> LBRACK <expression>
                            (COMMA <expression>)* RBRACK
+                         | DATABLOCK UNREACHABLE
                          | <higher_type(type_rule)>
                            <id_and_optional_assignment(rhs,
                            <decl_identifier>)>
@@ -152,6 +173,7 @@
                      | COMPLEXROWVECTOR LBRACK <expression> RBRACK
                      | COMPLEXMATRIX LBRACK <expression> COMMA <expression>
                        RBRACK
+                     | <no_constraints>
 
 <top_var_type> ::= INT [LABRACK <range> RABRACK]
                  | REAL <type_constraint>
@@ -169,12 +191,13 @@
                  | POSITIVEORDERED LBRACK <expression> RBRACK
                  | SIMPLEX LBRACK <expression> RBRACK
                  | UNITVECTOR LBRACK <expression> RBRACK
-                 | SUMTOZERO LBRACK <expression> RBRACK
+                 | SUMTOZEROVEC LBRACK <expression> RBRACK
                  | CHOLESKYFACTORCORR LBRACK <expression> RBRACK
                  | CHOLESKYFACTORCOV LBRACK <expression> [COMMA <expression>]
                    RBRACK
                  | CORRMATRIX LBRACK <expression> RBRACK
                  | COVMATRIX LBRACK <expression> RBRACK
+                 | SUMTOZEROMAT LBRACK <expression> COMMA <expression> RBRACK
                  | STOCHASTICCOLUMNMATRIX LBRACK <expression> COMMA
                    <expression> RBRACK
                  | STOCHASTICROWMATRIX LBRACK <expression> COMMA <expression>
@@ -281,6 +304,7 @@
                      | <expression> TILDE <identifier> LPAREN [<expression>
                        (COMMA <expression>)*] RPAREN [<truncation>] SEMICOLON
                      | TARGET PLUSASSIGN <expression> SEMICOLON
+                     | JACOBIAN PLUSASSIGN <expression> SEMICOLON
                      | BREAK SEMICOLON
                      | CONTINUE SEMICOLON
                      | PRINT LPAREN <printables> RPAREN SEMICOLON

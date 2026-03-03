@@ -576,12 +576,11 @@ module.exports = grammar({
 
         // Expressions
         _expression: $ => choice(
-            $._range_expression,
+            $._common_expression,
             $.conditional_expression,
             $.infix_op_expression,
             $.prefix_op_expression,
             $.postfix_op_expression,
-            $.indexed_expression,
         ),
 
         // in order to deal with ambiguity of <> range expressions
@@ -591,7 +590,6 @@ module.exports = grammar({
             alias($.infix_op_range_expression, $.infix_op_expression),
             alias($.prefix_op_range_expression, $.prefix_op_expression),
             alias($.postfix_op_range_expression, $.postfix_op_expression),
-            alias($.indexed_range_expression, $.indexed_expression),
         ),
 
         // range constraints only allow a subset of expressions
@@ -606,6 +604,7 @@ module.exports = grammar({
             $.function_expression,
             $.distr_expression,
             $.tuple_projection,
+            $.indexed_expression,
             $.parenthized_expression,
         ),
 
@@ -656,7 +655,7 @@ module.exports = grammar({
 
         // trick used for call expression in c grammar
         indexed_expression: $ => prec.left(PREC.INDEX, seq(
-            $._expression,
+            $._common_expression,
             '[',
             optional($.index),
             repeat(seq(',', optional($.index))),

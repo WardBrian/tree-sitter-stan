@@ -2210,7 +2210,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_range_expression"
+          "name": "_common_expression"
         },
         {
           "type": "SYMBOL",
@@ -2227,10 +2227,6 @@
         {
           "type": "SYMBOL",
           "name": "postfix_op_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "indexed_expression"
         }
       ]
     },
@@ -2267,15 +2263,6 @@
           },
           "named": true,
           "value": "postfix_op_expression"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "indexed_range_expression"
-          },
-          "named": true,
-          "value": "indexed_expression"
         }
       ]
     },
@@ -2321,6 +2308,10 @@
         {
           "type": "SYMBOL",
           "name": "tuple_projection"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "indexed_expression"
         },
         {
           "type": "SYMBOL",
@@ -3051,7 +3042,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "_expression"
+            "name": "_common_expression"
           },
           {
             "type": "STRING",

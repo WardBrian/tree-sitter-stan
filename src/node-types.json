@@ -2099,10 +2099,6 @@
           "named": true
         },
         {
-          "type": "conditional_expression",
-          "named": true
-        },
-        {
           "type": "distr_expression",
           "named": true
         },
@@ -2123,23 +2119,11 @@
           "named": true
         },
         {
-          "type": "infix_op_expression",
-          "named": true
-        },
-        {
           "type": "integer_literal",
           "named": true
         },
         {
           "type": "parenthized_expression",
-          "named": true
-        },
-        {
-          "type": "postfix_op_expression",
-          "named": true
-        },
-        {
-          "type": "prefix_op_expression",
           "named": true
         },
         {
@@ -5364,6 +5348,10 @@
         },
         {
           "type": "imag_literal",
+          "named": true
+        },
+        {
+          "type": "indexed_expression",
           "named": true
         },
         {

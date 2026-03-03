@@ -315,6 +315,18 @@ model {
 Indexing
 ================================================================================
 
+transformed data {
+  tuple(int, real) x;
+  tuple(array[10] int, real) y;
+  array[5] tuple(array[10] tuple(int, array[1,2,3] real), real) y2;
+  x.1 = 1;
+
+  int z = (x).1;
+  int b = x.1;
+  real c = y2[1].1[1].2[1,1,1];
+
+  tuple(int, real, array[2] tuple(int, int)) d = (1, 2.5, {(1,2), (3,4)});
+}
 generated quantities {
     array[3,4,5] int x;
 
@@ -329,6 +341,111 @@ generated quantities {
 --------------------------------------------------------------------------------
 
 (program
+  (transformed_data
+    (top_var_decl
+      (topvar_tuple_type
+        (top_var_type
+          (int_type))
+        (top_var_type
+          (real_type)))
+      (identifier))
+    (top_var_decl
+      (topvar_tuple_type
+        (arr_dims
+          (integer_literal))
+        (top_var_type
+          (int_type))
+        (top_var_type
+          (real_type)))
+      (identifier))
+    (top_var_decl
+      (arr_dims
+        (integer_literal))
+      (topvar_tuple_type
+        (arr_dims
+          (integer_literal))
+        (topvar_tuple_type
+          (top_var_type
+            (int_type))
+          (arr_dims
+            (integer_literal)
+            (integer_literal)
+            (integer_literal))
+          (top_var_type
+            (real_type)))
+        (top_var_type
+          (real_type)))
+      (identifier))
+    (assignment_statement
+      (lhs
+        (tuple_proj_lhs
+          (lhs
+            (variable_expression
+              (identifier)))))
+      (assignment_op)
+      (integer_literal))
+    (top_var_decl
+      (top_var_type
+        (int_type))
+      (identifier)
+      (tuple_projection
+        (parenthized_expression
+          (variable_expression
+            (identifier)))))
+    (top_var_decl
+      (top_var_type
+        (int_type))
+      (identifier)
+      (tuple_projection
+        (variable_expression
+          (identifier))))
+    (top_var_decl
+      (top_var_type
+        (real_type))
+      (identifier)
+      (indexed_expression
+        (tuple_projection
+          (indexed_expression
+            (tuple_projection
+              (indexed_expression
+                (variable_expression
+                  (identifier))
+                (index
+                  (integer_literal))))
+            (index
+              (integer_literal))))
+        (index
+          (integer_literal))
+        (index
+          (integer_literal))
+        (index
+          (integer_literal))))
+    (top_var_decl
+      (topvar_tuple_type
+        (top_var_type
+          (int_type))
+        (top_var_type
+          (real_type))
+        (arr_dims
+          (integer_literal))
+        (topvar_tuple_type
+          (top_var_type
+            (int_type))
+          (top_var_type
+            (int_type))))
+      (identifier)
+      (tuple_expression
+        (integer_literal)
+        (real_literal
+          (integer_literal)
+          (integer_literal))
+        (array_expression
+          (tuple_expression
+            (integer_literal)
+            (integer_literal))
+          (tuple_expression
+            (integer_literal)
+            (integer_literal))))))
   (generated_quantities
     (top_var_decl
       (arr_dims

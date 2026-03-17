@@ -2,7 +2,7 @@
 
 from importlib.resources import files as _files
 
-from ._binding import language
+from ._binding import language_stan, language_stanfunctions
 
 
 def _get_query(name, file):
@@ -28,7 +28,8 @@ def __getattr__(name):
 
 
 __all__ = [
-    "language",
+    "language_stan",
+    "language_stanfunctions",
     "HIGHLIGHTS_QUERY",
     "INJECTIONS_QUERY",
     "LOCALS_QUERY",

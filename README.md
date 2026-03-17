@@ -1,7 +1,14 @@
 # tree-sitter-stan
 
 This is a [tree-sitter](https://tree-sitter.github.io/tree-sitter/) parser for the Stan language.
-It can parse the [latest Stan syntax](./grammar.txt).
+It can parse the [latest Stan syntax](./grammars/stan/grammar.txt).
+
+This module defines grammars both for `.stan` files and `.stanfunctions` files. Require them as follows:
+
+```js
+require('tree-sitter-stan').stan;
+require('tree-sitter-stan').stanfunctions;
+```
 
 ## Installation
 

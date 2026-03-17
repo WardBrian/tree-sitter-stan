@@ -3,9 +3,14 @@
 typedef struct TSLanguage TSLanguage;
 
 TSLanguage *tree_sitter_stan(void);
+TSLanguage *tree_sitter_stanfunctions(void);
 
-static PyObject* _binding_language(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
+static PyObject* _binding_language_stan(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
     return PyCapsule_New(tree_sitter_stan(), "tree_sitter.Language", NULL);
+}
+
+static PyObject* _binding_language_stanfunctions(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
+    return PyCapsule_New(tree_sitter_stanfunctions(), "tree_sitter.Language", NULL);
 }
 
 static struct PyModuleDef_Slot slots[] = {
@@ -16,8 +21,10 @@ static struct PyModuleDef_Slot slots[] = {
 };
 
 static PyMethodDef methods[] = {
-    {"language", _binding_language, METH_NOARGS,
-     "Get the tree-sitter language for this grammar."},
+    {"language_stan", _binding_language_stan, METH_NOARGS,
+     "Get the tree-sitter language for Stan."},
+    {"language_stanfunctions", _binding_language_stanfunctions, METH_NOARGS,
+     "Get the tree-sitter language for Stan Functions."},
     {NULL, NULL, 0, NULL}
 };
 

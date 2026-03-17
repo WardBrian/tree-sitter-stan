@@ -1,11 +1,6 @@
 * text=auto eol=lf
 
-src/*.json linguist-generated
-src/parser.c linguist-generated
-src/tree_sitter/* linguist-generated
+grammars/**/src/*.json linguist-generated
+grammars/**/src/parser.c linguist-generated
+grammars/**/src/tree_sitter/* linguist-generated
 
-bindings/** linguist-generated
-binding.gyp linguist-generated
-setup.py linguist-generated
-Makefile linguist-generated
-Package.swift linguist-generated

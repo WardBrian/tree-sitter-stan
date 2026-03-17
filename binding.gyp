@@ -6,11 +6,12 @@
         "<!(node -p \"require('node-addon-api').targets\"):node_addon_api_except",
       ],
       "include_dirs": [
-        "src",
+        "grammars/stan/src",
       ],
       "sources": [
         "bindings/node/binding.cc",
-        "src/parser.c",
+        "grammars/stan/src/parser.c",
+        "grammars/stanfunctions/src/parser.c",
         # NOTE: if your language has an external scanner, add it here.
       ],
       "conditions": [

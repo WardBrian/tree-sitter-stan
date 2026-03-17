@@ -13,5 +13,8 @@ LOCALS_QUERY: Final[str] | None
 TAGS_QUERY: Final[str] | None
 """The symbol tagging query for this grammar."""
 
-def language() -> CapsuleType:
-    """The tree-sitter language function for this grammar."""
+def language_stan() -> CapsuleType:
+    """The tree-sitter language function for Stan."""
+
+def language_stanfunctions() -> CapsuleType:
+    """The tree-sitter language function for Stan Functions."""

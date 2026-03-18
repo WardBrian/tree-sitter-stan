@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - '*'
+      - "main"
 
 jobs:
   test:
@@ -15,7 +15,12 @@ jobs:
         os: [macos-latest, ubuntu-latest]
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-      - run: npm install
-      - run: npm test
-      - run: npx tree-sitter test
+      - uses: tree-sitter/setup-action/cli@v2
+      - uses: tree-sitter/parser-test-action@v3
+        with:
+          abi-version: 14
+          test-rust: true
+          test-node: true
+          test-python: true
+          test-go: true
+          test-swift: true

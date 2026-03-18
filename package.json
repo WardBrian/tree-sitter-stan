@@ -51,7 +51,8 @@
     "queries/*",
     "grammars/stan/src/**",
     "grammars/stanfunctions/src/**",
-    "*.wasm"
+    "grammars/stan/*.wasm",
+    "grammars/stanfunctions/*.wasm"
   ],
   "bugs": {
     "url": "https://github.com/WardBrian/tree-sitter-stan/issues"

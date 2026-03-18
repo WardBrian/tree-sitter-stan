@@ -28,6 +28,7 @@ jobs:
         run: |
           npm install -g npm@latest
           npm install
+          cd grammars/stan/
           npx tree-sitter generate --abi 14
           npx tree-sitter build
           npx tree-sitter build --wasm

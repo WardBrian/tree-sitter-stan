@@ -23,9 +23,9 @@
       "file-types": ["stanfunctions"],
       "injection-regex": "^stanfunctions$",
       "class-name": "TreeSitterStanFunctions",
-      "highlights": "./queries/highlights.scm",
-      "tags": "./queries/tags.scm",
-      "locals": "./queries/locals.scm"
+      "highlights": "./queries/sf-highlights.scm",
+      "tags": "./queries/sf-tags.scm",
+      "locals": "./queries/sf-locals.scm"
     }
   ],
   "metadata": {

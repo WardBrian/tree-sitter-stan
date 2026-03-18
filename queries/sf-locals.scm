@@ -17,9 +17,5 @@ parameter: (identifier) @local.definition
 loopvar: (identifier) @local.definition
 )
 (var_decl name: (identifier) @local.definition)
-; BEGIN_STAN_ONLY
-(top_var_decl name: (identifier) @local.definition)
-(top_var_decl_no_assign name: (identifier) @local.definition)
-; END_STAN_ONLY
 ; references
 (variable_expression (identifier) @local.reference)

@@ -20,7 +20,9 @@ jobs:
         with:
           abi-version: 14
           test-rust: true
-          test-node: true
           test-python: true
           test-go: true
           test-swift: true
+      - uses: actions/setup-node@v6
+      - run: npm install
+      - run: npm test

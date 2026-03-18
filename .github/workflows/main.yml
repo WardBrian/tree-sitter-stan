@@ -1,10 +1,24 @@
 name: test tree-sitter-stan
+
 on:
-  workflow_dispatch:
-  pull_request:
   push:
-    branches:
-      - '*'
+    branches: [main]
+    paths:
+      - grammars/**/grammar.js
+      - grammars/**/src/**
+      - bindings/**
+      - binding.gyp
+  pull_request:
+    paths:
+      - grammars/**/grammar.js
+      - grammars/**/src/**
+      - bindings/**
+      - binding.gyp
+  workflow_dispatch:
+
+concurrency:
+  group: ${{github.workflow}}-${{github.ref}}
+  cancel-in-progress: true
 
 jobs:
   test:
@@ -15,7 +29,17 @@ jobs:
         os: [macos-latest, ubuntu-latest]
     steps:
       - uses: actions/checkout@v6
+      - uses: tree-sitter/setup-action/cli@v2
+      - uses: tree-sitter/parser-test-action@v3
+        with:
+          abi-version: 14
+          test-rust: true
+          test-python: true
+          test-go: true
+          go-version: "1.23"
+          test-node: true
+          node-version: "20"
+          test-swift: true
       - uses: actions/setup-node@v6
       - run: npm install
       - run: npm test
-      - run: npx tree-sitter test

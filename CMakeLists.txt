@@ -30,12 +30,11 @@ macro(add_parser name)
                        COMMENT "Generating parser.c")
 
     add_library(tree-sitter-${name}
-                "${CMAKE_CURRENT_SOURCE_DIR}/src/parser.c"
-                "${CMAKE_CURRENT_SOURCE_DIR}/src/scanner.c")
+                "${CMAKE_CURRENT_SOURCE_DIR}/src/parser.c")
     target_include_directories(tree-sitter-${name}
                                PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src"
                                INTERFACE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/bindings/c>
-                                         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>))
+                                         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
     target_compile_definitions(tree-sitter-${name} PRIVATE
                                $<$<BOOL:${TREE_SITTER_REUSE_ALLOCATOR}>:TREE_SITTER_REUSE_ALLOCATOR>

@@ -87,25 +87,6 @@ name: (identifier) @function.call
     "array"
     "tuple"
     "vector"
-; BEGIN_STAN_ONLY
-    "simplex"
-    "unit_vector"
-    "sum_to_zero_vector"
-    "ordered"
-    "positive_ordered"
-    "row_vector"
-    "matrix"
-    "complex_vector"
-    "complex_matrix"
-    "complex_row_vector"
-    "corr_matrix"
-    "cov_matrix"
-    "cholesky_factor_cov"
-    "cholesky_factor_corr"
-    "column_stochastic_matrix"
-    "row_stochastic_matrix"
-    "sum_to_zero_matrix"
-; END_STAN_ONLY
     "void"
 ]@type
 
@@ -125,14 +106,6 @@ name: (identifier) @function.call
     "return"
 ] @keyword.control
 
-; BEGIN_STAN_ONLY
-[
-    "lower"
-    "upper"
-    "offset"
-    "multiplier"
-] @property
-; END_STAN_ONLY
 
 (preproc_include
     directive: "#include" @keyword
@@ -152,13 +125,3 @@ loopvar: (identifier) @variable.parameter
 parameter: (identifier) @variable.parameter
 )
 
-; BEGIN_STAN_ONLY
-; these probably shouldn't be modules
-(functions "functions" @module)
-(data "data" @module)
-(transformed_data "transformed data" @module)
-(parameters "parameters" @module)
-(transformed_parameters "transformed parameters" @module)
-(model "model" @module)
-(generated_quantities "generated quantities" @module)
-; END_STAN_ONLY

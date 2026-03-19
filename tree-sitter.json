@@ -6,16 +6,30 @@
       "camelcase": "Stan",
       "title": "Stan",
       "scope": "source.stan",
+      "path": "grammars/stan/",
       "file-types": ["stan"],
       "injection-regex": "^stan$",
       "class-name": "TreeSitterStan",
       "highlights": "./queries/highlights.scm",
       "tags": "./queries/tags.scm",
       "locals": "./queries/locals.scm"
+    },
+    {
+      "name": "stanfunctions",
+      "camelcase": "StanFunctions",
+      "title": "Stan Functions Files",
+      "scope": "source.stanfunctions",
+      "path": "grammars/stanfunctions/",
+      "file-types": ["stanfunctions"],
+      "injection-regex": "^stanfunctions$",
+      "class-name": "TreeSitterStanFunctions",
+      "highlights": "./queries/sf-highlights.scm",
+      "tags": "./queries/sf-tags.scm",
+      "locals": "./queries/sf-locals.scm"
     }
   ],
   "metadata": {
-    "version": "0.2.9",
+    "version": "0.3.0",
     "license": "MIT",
     "description": "A parser for the Stan modelling language",
     "authors": [

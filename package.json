@@ -1,12 +1,13 @@
 {
   "name": "@wardbrian/tree-sitter-stan",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "A tree sitter grammer for modern Stan programs",
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
     "install": "node-gyp-build",
-    "prestart": "tree-sitter generate --abi 14 && tree-sitter build --wasm",
+    "generate": "for dir in grammars/stan grammars/stanfunctions; do cd $dir; tree-sitter generate --abi 14; cd -; done",
+    "prestart": "tree-sitter build grammars/stan --wasm -o grammars/stan/tree-sitter-stan.wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js"
   },
@@ -43,13 +44,15 @@
     "parsing"
   ],
   "files": [
-    "grammar.js",
+    "grammars/stan/grammar.js",
     "binding.gyp",
     "prebuilds/**",
     "bindings/node/*",
     "queries/*",
-    "src/**",
-    "*.wasm"
+    "grammars/stan/src/**",
+    "grammars/stanfunctions/src/**",
+    "grammars/stan/*.wasm",
+    "grammars/stanfunctions/*.wasm"
   ],
   "bugs": {
     "url": "https://github.com/WardBrian/tree-sitter-stan/issues"

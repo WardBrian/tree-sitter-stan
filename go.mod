@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-stan
+module github.com/wardbrian/tree-sitter-stan
 
 go 1.23
 

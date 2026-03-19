@@ -7,7 +7,7 @@ let package = Package(
         .library(name: "TreeSitterStan", targets: ["TreeSitterStan"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.8.0"),
+        .package(name: "SwiftTreeSitter", url: "https://github.com/tree-sitter/swift-tree-sitter", from: "0.8.0"),
     ],
     targets: [
         .target(
@@ -15,7 +15,8 @@ let package = Package(
             dependencies: [],
             path: ".",
             sources: [
-                "src/parser.c",
+                "grammars/stan/src/parser.c",
+                "grammars/stanfunctions/src/parser.c",
                 // NOTE: if your language has an external scanner, add it here.
             ],
             resources: [

@@ -1,0 +1,24 @@
+
+vector rhs(real t, vector y, data real alpha) {
+// <- type
+//     ^ function
+//        ^ punctuation.bracket
+//         ^ type
+//              ^ variable.parameter
+//                            ^ type
+  vector[1] yp = -alpha * y;
+//^ type
+//       ^ number
+//          ^ variable
+//             ^ operator
+//                 ^ variable.parameter
+  return yp;
+//^ keyword.control
+}
+#include <more_functions.stan>
+// <- keyword
+//         ^ string.special
+
+void foo(tuple(int, real) x) {
+//        ^ type
+}

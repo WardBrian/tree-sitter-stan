@@ -19,9 +19,11 @@ type NodeInfo =
     });
 
 type Language = {
+  name: string;
   language: unknown;
   nodeTypeInfo: NodeInfo[];
 };
 
-declare const language: Language;
-export = language;
+declare const stan: Language;
+declare const stanfunctions: Language;
+export = { stan, stanfunctions };

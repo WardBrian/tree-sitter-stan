@@ -1,6 +1,6 @@
 {
   "name": "@wardbrian/tree-sitter-stan",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A tree sitter grammer for modern Stan programs",
   "main": "bindings/node",
   "types": "bindings/node",

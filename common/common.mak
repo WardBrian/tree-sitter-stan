@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-$(PARSER_NAME)
 HOMEPAGE_URL := https://github.com/wardbrian/tree-sitter-stan
-VERSION := 0.3.0
+VERSION := 0.3.1
 
 # repository
 SRC_DIR := src

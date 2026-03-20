@@ -32,6 +32,10 @@ jobs:
           npx tree-sitter generate --abi 14
           npx tree-sitter build
           npx tree-sitter build --wasm
+          cd ../../grammars/stanfunctions/
+          npx tree-sitter generate --abi 14
+          npx tree-sitter build
+          npx tree-sitter build --wasm
 
       - name: Tests
         run: |

@@ -45,6 +45,7 @@
   ],
   "files": [
     "grammars/stan/grammar.js",
+    "grammars/stanfunctions/grammar.js",
     "binding.gyp",
     "prebuilds/**",
     "bindings/node/*",
